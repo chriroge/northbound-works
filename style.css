@@ -1129,3 +1129,75 @@ section[id] {
         margin-top: 0.5rem;
     }
 }
+/* Ideas & Explorations */
+.writing-section {
+    background: #EAF4F2;
+    padding: 3rem 0;
+}
+
+.writing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.writing-card {
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border-top: 4px solid var(--blue);
+    border-radius: 12px;
+    padding: 1.75rem;
+}
+
+.writing-card:nth-child(2) {
+    border-top-color: var(--teal);
+}
+
+.writing-card:nth-child(3) {
+    border-top-color: var(--orange);
+}
+
+.writing-card .writing-label {
+    color: #23658F;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.writing-card h3 {
+    color: var(--navy);
+    font-size: 1.45rem;
+    margin-bottom: 1rem;
+}
+
+.writing-card p {
+    margin-bottom: 1.25rem;
+}
+
+.writing-status,
+.writing-link {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.writing-status {
+    color: var(--dark-gray);
+    font-style: italic;
+}
+
+.writing-link {
+    color: #23658F;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+@media (max-width: 800px) {
+    .writing-grid {
+        grid-template-columns: 1fr;
+    }
+}
