@@ -938,195 +938,105 @@ section[id] {
     }
 }
 /* Compact desktop layout */
+/* Northbound typography and balanced layout */
+:root {
+    --font-headline: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+.about-section {
+    background: #EAF4F2;
+}
+
+.about-heading {
+    font-size: 2rem;
+}
+
+.approach-card {
+    background: #FFFFFF;
+}
+
 @media (min-width: 1000px) {
     .navbar {
-        padding: 0.75rem 0;
+        padding: 0.85rem 0;
     }
 
     .hero {
-        padding: 5.5rem 2rem 1.5rem;
+        padding: 6.5rem 2rem 2.5rem;
     }
 
     .hero-layout {
-        max-width: 1050px;
-        grid-template-columns: 1fr 1fr;
-        gap: 2.5rem;
+        max-width: 1100px;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 3rem;
     }
 
     .hero-logo {
-        max-width: 310px;
+        max-width: 330px;
         margin: 0 auto;
     }
 
     .brand-heading {
-        margin-bottom: 0.75rem;
+        margin-bottom: 1.25rem;
     }
 
     .hero-art {
-        max-width: 390px;
+        width: 100%;
+        max-width: 480px;
         justify-self: center;
     }
 
     .hero-subtitle {
         font-size: 1rem;
-        line-height: 1.5;
-        margin-bottom: 1rem;
+        line-height: 1.65;
+        margin-bottom: 1.25rem;
+    }
+
+    .hero-cta {
+        justify-content: flex-start;
     }
 
     .hero-cta a {
-        padding: 0.65rem 1.25rem;
+        padding: 0.8rem 1.25rem;
     }
 
     .about-section {
-        padding: 1.75rem 0;
+        padding: 2.5rem 0;
     }
 
     .northbound-about {
-        grid-template-columns: 190px minmax(0, 1fr);
-        gap: 2rem;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 2.5rem;
     }
 
     .about-heading {
         font-size: 2rem;
-        margin-bottom: 0.75rem;
+        margin-bottom: 1rem;
     }
 
     .northbound-about .about-text p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-        margin-bottom: 0.75rem;
+        font-size: 1rem;
+        line-height: 1.65;
+        margin-bottom: 1rem;
     }
 
     .approach-grid {
-        margin-top: 1.25rem;
-        gap: 1rem;
-    }
-
-    .approach-card {
-        padding: 1rem 1.25rem;
-    }
-
-    .approach-card h3 {
-        font-size: 1.35rem;
-        margin-bottom: 0.35rem;
-    }
-
-    .approach-card p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-    }
-
-    .expertise-section {
-        padding-top: 1.5rem;
-    }
-}
-/* White background and subtly tinted cards */
-.about-section {
-    background: #FFFFFF;
-}
-
-.approach-card {
-    background: #F0F7F7;
-}
-
-/* Tighter desktop layout */
-@media (min-width: 1000px) {
-    .navbar {
-        padding: 0.5rem 0;
-    }
-
-    .hero {
-        padding: 4.5rem 2rem 1rem;
-    }
-
-    .hero-layout {
-        max-width: 1100px;
-        grid-template-columns: 1.3fr 1fr;
-        gap: 2rem;
-    }
-
-    .hero-logo {
-        max-width: 190px;
-    }
-
-    .brand-heading {
-        margin-bottom: 0.5rem;
-    }
-
-    .hero-art {
-        max-width: 270px;
-    }
-
-    .hero-subtitle {
-        margin-bottom: 0.65rem;
-        line-height: 1.4;
-    }
-
-    .hero-cta {
-        justify-content: center;
-    }
-
-    .hero-cta a {
-        padding: 0.45rem 1rem;
-    }
-
-    .about-section {
-        padding: 1rem 0;
-        border-top: 1px solid #E3ECEF;
-    }
-
-    .northbound-about {
-        grid-template-columns: 140px minmax(0, 1fr);
+        margin-top: 2rem;
         gap: 1.5rem;
     }
 
-    .about-heading {
-        font-size: 1.65rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .northbound-about .about-text p {
-        line-height: 1.4;
-        margin-bottom: 0.5rem;
-    }
-
-    .approach-grid {
-        margin-top: 1rem;
-    }
-
     .approach-card {
-        padding: 0.65rem 1rem;
+        padding: 1.5rem;
     }
 
     .approach-card h3 {
-        font-size: 1.2rem;
-        margin-bottom: 0.2rem;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
     .approach-card p {
-        line-height: 1.4;
-    }
-}
-@media (min-width: 1000px) {
-    .hero {
-        padding-top: 4rem;
-        padding-bottom: 0.5rem;
-    }
-
-    .hero-logo {
-        max-width: 170px;
-    }
-
-    .hero-art {
-        max-width: 235px;
-    }
-
-    .about-section {
-        padding: 0.75rem 0;
-    }
-
-    .approach-grid {
-        margin-top: 0.5rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
 }
 /* Ideas & Explorations */
