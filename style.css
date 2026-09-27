@@ -1020,3 +1020,90 @@ section[id] {
         padding-top: 1.5rem;
     }
 }
+/* White background and subtly tinted cards */
+.about-section {
+    background: #FFFFFF;
+}
+
+.approach-card {
+    background: #F0F7F7;
+}
+
+/* Tighter desktop layout */
+@media (min-width: 1000px) {
+    .navbar {
+        padding: 0.5rem 0;
+    }
+
+    .hero {
+        padding: 4.5rem 2rem 1rem;
+    }
+
+    .hero-layout {
+        max-width: 1100px;
+        grid-template-columns: 1.3fr 1fr;
+        gap: 2rem;
+    }
+
+    .hero-logo {
+        max-width: 190px;
+    }
+
+    .brand-heading {
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-art {
+        max-width: 270px;
+    }
+
+    .hero-subtitle {
+        margin-bottom: 0.65rem;
+        line-height: 1.4;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .hero-cta a {
+        padding: 0.45rem 1rem;
+    }
+
+    .about-section {
+        padding: 1rem 0;
+        border-top: 1px solid #E3ECEF;
+    }
+
+    .northbound-about {
+        grid-template-columns: 140px minmax(0, 1fr);
+        gap: 1.5rem;
+    }
+
+    .about-heading {
+        font-size: 1.65rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .northbound-about .about-text p {
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+    }
+
+    .approach-grid {
+        margin-top: 1rem;
+    }
+
+    .approach-card {
+        padding: 0.65rem 1rem;
+    }
+
+    .approach-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .approach-card p {
+        line-height: 1.4;
+    }
+}
