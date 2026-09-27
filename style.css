@@ -3,17 +3,24 @@
    =========================== */
 
 :root {
-    /* Color Palette */
-    --cream: #fffcf2;           /* Main background */
-    --beige: #ccc5b9;           /* Secondary background */
-    --dark-gray: #403d39;       /* Body text */
-    --charcoal: #252422;        /* Headlines */
-    --accent: #eb5e28;          /* Accent/CTA */
-    
-    /* Typography - Use these font families or replace with Le Monde Livre and Acumin Pro if you have them */
-    --font-headline: 'Lora', serif;              /* Fallback for Le Monde Livre */
-    --font-body: 'Inter', sans-serif;            /* Fallback for Acumin Pro */
-    
+    /* Northbound Works palette */
+    --navy: #103554;
+    --blue: #2D79AD;
+    --teal: #80CDD0;
+    --orange: #FF591F;
+    --ivory: #FAF8F0;
+
+    /* Connect the palette to the existing template */
+    --cream: #FFFFFF;
+    --beige: #EAF4F2;
+    --dark-gray: #344454;
+    --charcoal: var(--navy);
+    --accent: var(--orange);
+
+    /* Typography */
+    --font-headline: 'Lora', serif;
+    --font-body: 'Inter', sans-serif;
+
     /* Spacing */
     --section-padding: 5rem;
     --container-width: 1200px;
@@ -711,4 +718,49 @@ section {
         justify-content: center;
         gap: 1rem;
     }
+}
+/* Northbound finishing touches */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.97);
+    border-bottom-color: #DFE9EC;
+}
+
+.hero {
+    background: #FFFFFF;
+}
+
+.about-section {
+    background-color: var(--ivory);
+}
+
+.stat-item,
+.project-tags span {
+    background-color: #EAF4F2;
+}
+
+.stat-number,
+.project-type,
+.contact-method a,
+.nav-menu a:hover {
+    color: #23658F;
+}
+
+.btn-primary {
+    color: var(--navy);
+}
+
+.btn-primary:hover {
+    background-color: var(--navy);
+    border-color: var(--navy);
+    color: #FFFFFF;
+}
+
+.skill-tag:hover {
+    background-color: #EAF4F2;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 4px;
 }
