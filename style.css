@@ -937,3 +937,86 @@ section[id] {
         grid-template-columns: 1fr;
     }
 }
+/* Compact desktop layout */
+@media (min-width: 1000px) {
+    .navbar {
+        padding: 0.75rem 0;
+    }
+
+    .hero {
+        padding: 5.5rem 2rem 1.5rem;
+    }
+
+    .hero-layout {
+        max-width: 1050px;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+
+    .hero-logo {
+        max-width: 310px;
+        margin: 0 auto;
+    }
+
+    .brand-heading {
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-art {
+        max-width: 390px;
+        justify-self: center;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    .hero-cta a {
+        padding: 0.65rem 1.25rem;
+    }
+
+    .about-section {
+        padding: 1.75rem 0;
+    }
+
+    .northbound-about {
+        grid-template-columns: 190px minmax(0, 1fr);
+        gap: 2rem;
+    }
+
+    .about-heading {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .northbound-about .about-text p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 0.75rem;
+    }
+
+    .approach-grid {
+        margin-top: 1.25rem;
+        gap: 1rem;
+    }
+
+    .approach-card {
+        padding: 1rem 1.25rem;
+    }
+
+    .approach-card h3 {
+        font-size: 1.35rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .approach-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .expertise-section {
+        padding-top: 1.5rem;
+    }
+}
