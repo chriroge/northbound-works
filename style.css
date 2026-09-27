@@ -860,3 +860,80 @@ section[id] {
         scroll-margin-top: 10rem;
     }
 }
+/* Northbound About section */
+.northbound-about {
+    display: grid;
+    grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+    gap: 3rem;
+    align-items: start;
+}
+
+.about-portrait {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.about-heading {
+    font-size: 2.75rem;
+    margin-bottom: 1.25rem;
+    color: var(--navy);
+}
+
+.northbound-about .about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.approach-card {
+    background: #FFFFFF;
+    border-top: 4px solid var(--blue);
+    border-radius: 12px;
+    padding: 1.75rem;
+}
+
+.approach-card:nth-child(2) {
+    border-top-color: var(--teal);
+}
+
+.approach-card:nth-child(3) {
+    border-top-color: var(--orange);
+}
+
+.approach-card h3 {
+    color: var(--navy);
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.approach-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+    .northbound-about {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-portrait {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .about-heading {
+        font-size: 2.2rem;
+    }
+
+    .approach-grid {
+        grid-template-columns: 1fr;
+    }
+}
