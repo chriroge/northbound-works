@@ -1,0 +1,6 @@
+/* Reuse the brochure system; only the new illustration needs a different crop. */
+.water-preview img { object-position: 100% 28%; transform: scale(1.4); transform-origin: 100% 28%; }
+.real-world-page .school-art img { object-position: 100% 50%; transform: scale(1.4); transform-origin: 100% 50%; }
+@media(max-width:600px) {
+ .real-world-page .school-art img { object-position: 100% 28%; transform-origin: 100% 28%; }
+}
