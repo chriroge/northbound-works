@@ -1,0 +1,66 @@
+/* Article and portfolio additions using the existing Northbound brand. */
+.skip-link { position: absolute; left: 1rem; top: -8rem; z-index: 1100; background: white; color: var(--navy); padding: 1rem; }
+.skip-link:focus { top: 1rem; }
+.article-header { max-width: 1040px; margin: auto; padding: 6rem 2rem 1.5rem; text-align: center; }
+.article-brand { display: block; width: 150px; margin: 0 auto 1rem; }
+.article-brand img { display: block; width: 100%; height: auto; }
+.eyebrow { display: block; color: #23658F; font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1rem; }
+.article-header h1 { font-size: clamp(2rem, 4vw, 3rem); max-width: 800px; margin: auto; text-wrap: balance; }
+.article-deck { max-width: 760px; font-size: 1.05rem; margin: .85rem auto; }
+.byline { font-size: .9rem; }
+.article-contents { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.25rem; margin: 1rem 0 0; font-size: .85rem; }
+.article-contents a, .essay a { color: #23658F; text-decoration: underline; text-underline-offset: 4px; }
+.essay { max-width: 880px; margin: 0 auto; padding: 0 2rem 3rem; line-height: 1.6; }
+.essay p { margin: 0 0 .85rem; }
+.essay h2 { font-size: clamp(1.6rem, 3vw, 2rem); margin: 2rem 0 1rem; }
+.essay h3 { font-size: 1.35rem; margin: 1.5rem 0 .75rem; }
+.article-page [id] { scroll-margin-top: 7rem; }
+.paradigm-shift { background: var(--navy); color: white; padding: 1.75rem; border-left: 6px solid var(--teal); border-radius: 0 12px 12px 0; font-family: var(--font-headline); font-size: clamp(1.6rem, 3vw, 2rem); line-height: 1.4; }
+.comparison-wrap { overflow-x: auto; margin: 1.5rem 0; border: 1px solid #B8CCD3; border-radius: 12px; }
+.comparison-wrap table { width: 100%; border-collapse: collapse; text-align: left; font-size: .95rem; }
+.comparison-wrap caption { text-align: left; font-weight: 600; padding: 1.25rem; color: var(--navy); background: var(--ivory); }
+.comparison-wrap th { background: var(--navy); color: white; width: 50%; }
+.comparison-wrap th, .comparison-wrap td { padding: .9rem 1rem; vertical-align: top; }
+.comparison-wrap td { border-top: 1px solid #B8CCD3; }
+.comparison-wrap td:nth-child(2) { background: #EAF4F2; font-weight: 500; }
+.planning-map { background: var(--ivory); border: 1px solid #B8CCD3; padding: 1.25rem; border-radius: 12px; margin: 2rem 0; }
+.planning-map h2 { margin: 0 0 1.5rem; font-size: 1.8rem; }
+.planning-stages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; list-style: none; }
+.planning-stages li { background: white; border-top: 5px solid var(--blue); padding: 1.25rem; border-radius: 8px; }
+.planning-stages li:nth-child(2) { border-color: var(--teal); }
+.planning-stages li:nth-child(3) { border-color: var(--orange); }
+.planning-stages li:nth-child(4) { border-color: var(--navy); }
+.stage-number { color: #23658F; font-weight: 700; font-size: .85rem; }
+.planning-stages h3 { margin: .4rem 0 .75rem; }
+.planning-stages p { font-size: .9rem; margin-bottom: .8rem; }
+.planning-stages .stage-question { color: var(--navy); font-weight: 600; margin: 0; }
+.planning-map .map-return { margin: 1.25rem 0 0; padding-top: 1rem; border-top: 2px solid var(--teal); font-size: .9rem; }
+.advice-list { padding-left: 1.5rem; }
+.advice-list li { padding-left: .5rem; margin: 0 0 .85rem; }
+.advice-list li::marker { color: #23658F; font-weight: 700; }
+.article-back { margin-top: 3rem !important; border-top: 1px solid #B8CCD3; padding-top: 1.5rem; }
+.counselor-card { border-top: 5px solid var(--blue); }
+.counselor-card h4 { margin: 1.5rem 0 .65rem; font-size: 1.15rem; }
+.counselor-card .writing-link { display: inline-block; }
+.artifact-subtitle { font-style: italic; }
+@media (max-width: 800px) {
+    .article-header { padding-top: 1.25rem; }
+    .article-page [id] { scroll-margin-top: 11rem; }
+}
+@media (max-width: 540px) {
+    .essay, .article-header { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .planning-stages { grid-template-columns: 1fr; }
+    .planning-map { padding: 1rem; }
+    .comparison-wrap th, .comparison-wrap td { padding: .8rem; overflow-wrap: anywhere; }
+    .comparison-wrap table { font-size: .85rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+    .navbar, .article-contents, .skip-link, .article-back { display: none; }
+    .article-header { padding-top: 0; }
+    .essay { max-width: none; }
+    .planning-map, tr { break-inside: avoid; }
+}
