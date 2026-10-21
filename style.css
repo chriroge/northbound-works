@@ -861,6 +861,26 @@ section[id] {
     }
 }
 /* Northbound About section */
+.northbound-about .about-text .about-statement {
+    font-family: var(--font-headline);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+}
+
+.northbound-about .about-text .about-closing {
+    border-left: 3px solid var(--orange);
+    padding-left: 1rem;
+    margin-top: 1.5rem;
+    font-family: var(--font-headline);
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--navy);
+}
+
 .northbound-about {
     display: grid;
     grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
