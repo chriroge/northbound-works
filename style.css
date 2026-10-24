@@ -893,7 +893,7 @@ section[id] {
     grid-template-areas:
         "portrait copy"
         "journey copy"
-        ". projects";
+        "journey projects";
     column-gap: 3rem;
     row-gap: 1.25rem;
     align-items: start;
@@ -913,11 +913,13 @@ section[id] {
 
 .about-projects-cta {
     grid-area: projects;
+    align-self: end;
     justify-self: start;
 }
 
 .about-journey-card {
     grid-area: journey;
+    align-self: end;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
