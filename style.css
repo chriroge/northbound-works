@@ -18,8 +18,8 @@
     --accent: var(--orange);
 
     /* Typography */
-    --font-headline: 'Lora', serif;
-    --font-body: 'Inter', sans-serif;
+    --font-headline: 'Montserrat', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
 
     /* Spacing */
     --section-padding: 5rem;
@@ -1086,7 +1086,7 @@ section[id] {
 /* Compact desktop layout */
 /* Northbound typography and balanced layout */
 :root {
-    --font-headline: 'Playfair Display', serif;
+    --font-headline: 'Montserrat', sans-serif;
     --font-body: 'Montserrat', sans-serif;
 }
 

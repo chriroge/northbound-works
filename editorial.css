@@ -1,8 +1,8 @@
-/* Brand Brief V1: exact palette; Lora + Source Sans 3 are an implementation choice within the brief's open typography direction. */
+/* Brand Brief V1: exact palette; Montserrat is the single website font family. */
 .article-page {
  --navy: #1D3557; --blue: #457B9D; --teal: #A8DADC; --orange: #E76F51; --ivory: #F8F7F3;
  --cream: #F8F7F3; --beige: #A8DADC; --dark-gray: #1D3557; --charcoal: #1D3557; --accent: #E76F51;
- --font-headline: 'Lora', Georgia, serif; --font-body: 'Source Sans 3', sans-serif;
+ --font-headline: 'Montserrat', sans-serif; --font-body: 'Montserrat', sans-serif;
  color: var(--navy);
 }
 /* Compact editorial feature; existing Northbound palette and typefaces. */

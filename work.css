@@ -28,7 +28,7 @@
 .work-related h4 { margin: 1rem 0 .5rem; }
 .work-related p { margin-bottom: .8rem; }
 .other-work { margin-top: 2rem; }
-.jarvis-page { --navy:#1D3557; --charcoal:#1D3557; --dark-gray:#1D3557; --blue:#457B9D; --teal:#A8DADC; --orange:#E76F51; --cream:#F8F7F3; --font-headline:'Lora',Georgia,serif; --font-body:'Source Sans 3',sans-serif; background:#edf4f2; }
+.jarvis-page { --navy:#1D3557; --charcoal:#1D3557; --dark-gray:#1D3557; --blue:#457B9D; --teal:#A8DADC; --orange:#E76F51; --cream:#F8F7F3; --font-headline:'Montserrat', sans-serif; --font-body:'Montserrat',sans-serif; background:#edf4f2; }
 .jarvis-page .navbar { background: #F8F7F3; border-bottom-color: #A8DADC; }
 .jarvis-sheet { max-width: 920px; margin: 6rem auto 2rem; border: 1px solid #A8DADC; border-radius: 14px; background: #F8F7F3; overflow: hidden; }
 .jarvis-heading { text-align: center; padding: 1.25rem 1.5rem .75rem; }
