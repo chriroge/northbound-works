@@ -890,15 +890,120 @@ section[id] {
 .northbound-about {
     display: grid;
     grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
-    gap: 3rem;
+    grid-template-areas:
+        "portrait copy"
+        "journey copy"
+        ". projects";
+    column-gap: 3rem;
+    row-gap: 1.25rem;
     align-items: start;
 }
 
 .about-portrait {
+    grid-area: portrait;
     display: block;
     width: 100%;
     height: auto;
     border-radius: 16px;
+}
+
+.northbound-about .about-text {
+    grid-area: copy;
+}
+
+.about-projects-cta {
+    grid-area: projects;
+    justify-self: start;
+}
+
+.about-journey-card {
+    grid-area: journey;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.25rem;
+    color: var(--navy);
+    text-decoration: none;
+    background: #FFFFFF;
+    border: 1px solid #BFD4DC;
+    border-top: 4px solid var(--orange);
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(29, 53, 87, 0.08);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.about-journey-card:hover {
+    color: var(--navy);
+    border-color: var(--blue);
+    border-top-color: var(--orange);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(29, 53, 87, 0.13);
+}
+
+.about-journey-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 0.09em;
+    color: #23658F;
+}
+
+.about-journey-route {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 18px;
+}
+
+.about-journey-route::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    left: 5px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue), var(--orange));
+    transform: translateY(-50%);
+}
+
+.about-journey-route span {
+    position: relative;
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+    background: #FFFFFF;
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+}
+
+.about-journey-route span:last-child {
+    width: 14px;
+    height: 14px;
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+.about-journey-title {
+    font-family: var(--font-headline);
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.about-journey-description {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    color: #40576E;
+}
+
+.about-journey-cta {
+    margin-top: 0.15rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #A63E25;
 }
 
 .about-heading {
@@ -947,6 +1052,11 @@ section[id] {
 @media (max-width: 800px) {
     .northbound-about {
         grid-template-columns: 1fr;
+        grid-template-areas:
+            "portrait"
+            "copy"
+            "journey"
+            "projects";
         gap: 2rem;
     }
 
@@ -957,6 +1067,16 @@ section[id] {
 
     .about-heading {
         font-size: 2.2rem;
+    }
+
+    .about-journey-card {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .about-projects-cta {
+        justify-self: center;
     }
 
     .approach-grid {
@@ -1032,7 +1152,8 @@ section[id] {
 
     .northbound-about {
         grid-template-columns: 220px minmax(0, 1fr);
-        gap: 2.5rem;
+        column-gap: 2.5rem;
+        row-gap: 1.25rem;
     }
 
     .about-heading {
