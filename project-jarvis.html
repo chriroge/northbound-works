@@ -9,7 +9,61 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="editorial.css"><link rel="stylesheet" href="brochure.css"><link rel="stylesheet" href="jarvis-editorial.css"></head><body class="article-page jarvis-editorial">
+<link rel="stylesheet" href="editorial.css"><link rel="stylesheet" href="brochure.css"><link rel="stylesheet" href="jarvis-editorial.css">
+<style>
+/* Scoped to the revised Jarvis content; existing site header stays intact. */
+.jarvis-story { --j-navy:#103554; --j-blue:#2D79AD; --j-teal:#25888b; --j-sky:#80CDD0; --j-orange:#FF591F; color:var(--j-navy); font-family:'Source Sans 3',Arial,sans-serif; font-size:16px; line-height:1.5; }
+.jarvis-story *, .jarvis-story *::before, .jarvis-story *::after { box-sizing:border-box; }
+.jarvis-story h2,.jarvis-story h3,.jarvis-story h4 { color:var(--j-navy); font-family:'Lora',Georgia,serif; letter-spacing:normal; }
+.jarvis-story h2 { margin:0 0 12px; font-size:clamp(25px,3vw,36px); line-height:1.2; }
+.jarvis-story p { margin:0 0 12px; }
+.jarvis-story .j-intro { max-width:850px; margin:0 0 32px; }
+.jarvis-story .j-intro p { font-size:18px; }
+.jarvis-story .j-intro .j-lead { font-family:'Lora',Georgia,serif; font-size:clamp(23px,2.4vw,30px); line-height:1.35; }
+.jarvis-story .j-process { margin:0; padding:24px 0; border-top:1px solid #c8dddd; border-bottom:1px solid #c8dddd; }
+.jarvis-story .j-steps { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin-top:24px; }
+.jarvis-story .j-step { display:grid; grid-template-rows:76px 128px 1fr; gap:12px; min-width:0; margin:0; padding:0; }
+.jarvis-story .j-step h3 { display:flex; align-items:flex-start; gap:10px; margin:0; font-size:19px; line-height:1.3; }
+.jarvis-story .j-number { display:grid; place-items:center; flex:0 0 36px; height:36px; border-radius:50%; background:#e2f2f4; color:var(--j-blue); font-family:'Source Sans 3',Arial,sans-serif; font-size:22px; }
+.jarvis-story .j-step:nth-child(3) .j-number { background:#fff0e7; color:#b3370b; }
+.jarvis-story .j-step > p { font-size:16px; line-height:1.45; margin:0; }
+.jarvis-story .j-panel { margin:0; padding:17px; border:1px solid #d4e6e8; border-radius:12px; background:#fff; min-height:360px; }
+.jarvis-story .j-panel h4 { font-size:19px; line-height:1.3; margin:0 0 18px; }
+.jarvis-story .j-college { display:grid; grid-template-columns:70px 1fr; gap:10px; align-items:center; margin-bottom:20px; }
+.jarvis-story .j-college svg { width:70px; height:100px; border-radius:7px; }
+.jarvis-story .j-college strong { display:block; line-height:1.25; font-size:16px; }
+.jarvis-story .j-college small { display:block; font-size:14px; margin-top:6px; }
+.jarvis-story .j-facts { margin:0; }
+.jarvis-story .j-facts div { padding:12px 0; border-top:1px solid #e3eff0; }
+.jarvis-story .j-facts dt { font-size:14px; }
+.jarvis-story .j-facts dd { font-weight:700; font-size:21px; margin:2px 0 0; }
+.jarvis-story .j-bar-row { margin:0 0 18px; }
+.jarvis-story .j-bar-label { display:flex; justify-content:space-between; gap:6px; font-size:14px; margin-bottom:6px; }
+.jarvis-story .j-track { height:11px; background:#edf4f3; border-radius:20px; overflow:hidden; }
+.jarvis-story .j-fill { display:block; height:100%; background:var(--j-teal); border-radius:20px; }
+.jarvis-story .j-fill.j-gap { background:var(--j-orange); }
+.jarvis-story .j-years { list-style:none; margin:0 0 0 8px; padding:0; }
+.jarvis-story .j-years li { position:relative; border-left:3px solid var(--j-sky); padding:0 0 19px 19px; margin:0; }
+.jarvis-story .j-years li:last-child { border-color:transparent; padding-bottom:0; }
+.jarvis-story .j-years li::before { content:''; position:absolute; width:15px; height:15px; border-radius:50%; background:var(--j-blue); top:4px; left:-9px; }
+.jarvis-story .j-years li:nth-child(2)::before { background:var(--j-teal); }
+.jarvis-story .j-years li:nth-child(n+3)::before { background:var(--j-orange); }
+.jarvis-story .j-years strong { font-size:16px; }
+.jarvis-story .j-years p { margin:4px 0 0; font-size:14px; line-height:1.35; }
+.jarvis-story .j-progress { display:block; width:100%; height:auto; margin:15px 0 24px; }
+.jarvis-story .j-reminder { background:#e8f4f6; padding:14px; border-radius:8px; font-size:16px; }
+.jarvis-story .j-caption { font-size:13px; color:#486373; margin:16px 0 0; }
+.jarvis-story .j-bottom { display:grid; grid-template-columns:1fr 1fr; gap:32px; padding:28px 0; }
+.jarvis-story .j-bottom h2 { font-size:25px; }
+.jarvis-story .j-roles { padding:0; margin:0; list-style:none; }
+.jarvis-story .j-roles li { margin:0 0 10px; }
+.jarvis-story .j-future { padding-top:12px; border-top:1px solid #c8dddd; }
+@media(min-width:1100px) { .jarvis-story .j-step { grid-template-rows:60px 116px 1fr; } }
+@media(max-width:1000px) { .jarvis-story .j-steps { grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px 20px; } .jarvis-story .j-step { grid-template-rows:52px 100px 1fr; } }
+@media(max-width:600px) { .jarvis-story .j-steps,.jarvis-story .j-bottom { grid-template-columns:1fr; } .jarvis-story .j-step { grid-template-rows:auto auto auto; gap:14px; } .jarvis-story .j-panel { min-height:0; } .jarvis-story .j-college { grid-template-columns:85px 1fr; } .jarvis-story .j-intro p { font-size:17px; } }
+@media print { .jarvis-story .j-step { break-inside:avoid; } }
+</style>
+</head><body class="article-page jarvis-editorial">
 <a class="skip-link" href="#article">Skip to article</a>
 <nav class="navbar">
         <div class="nav-container">
@@ -26,18 +80,98 @@
 <div class="brochure-actions"><a href="project-jarvis-overview.pdf" download>Download the project overview (PDF)</a><a href="images/project-jarvis.png">View the original concept poster</a></div>
 <article class="brochure-page" aria-label="Project Jarvis overview">
 <header class="brochure-cover"><div class="school-art"><img src="images/jarvis-pathways-hero.png" alt="The Northbound student with a backpack tracing possible academic routes on a campus map."></div><div class="brandline"><a href="index.html"><img src="images/New Logo. New Phrase PNG.png" alt="Northbound Works. Find direction. Move forward."></a><span>UNC MEITE · GROUP PROJECT</span></div><div class="cover-copy"><p class="kicker">College readiness and academic planning</p><h1>Project Jarvis</h1><p class="deck">Know where you’re going.<br>Build confidence you’ll get there.</p><p class="author">An early-stage UNC MEITE group project</p></div></header>
-<div class="page-content">
-<div class="two-up opening"><section><h2><span>01</span> From aspirations to a plan</h2><p>Jarvis explores how families can connect college aspirations to courses, milestones, and experiences while there is still time to prepare.</p></section><section><h2><span>02</span> Keep possibilities open</h2><p>As interests and circumstances change, students would revisit their preparation and consider different pathways with parents and counselors.</p></section></div>
-<p class="big-shift">Connect today’s choices to tomorrow’s possibilities.<br><strong>Build a plan that grows with the student.</strong></p>
-<section><h2><span>03</span> A plan you can keep improving</h2><figure class="brochure-cycle"><figcaption>Set targets · Assess readiness · Plan · Revisit</figcaption><ol>
-<li><span>01</span><h3>Set targets</h3><p>Explore colleges, programs, and the preparation they may require.</p></li>
-<li><span>02</span><h3>Assess readiness</h3><p>Identify strengths, gaps, and opportunities in relation to your goals.</p></li>
-<li><span>03</span><h3>Build a plan</h3><p>Connect courses, milestones, and experiences to promising options.</p></li>
-<li><span>04</span><h3>Revisit &amp; adjust</h3><p>Update the plan as grades, interests, and circumstances change.</p></li>
-</ol><p class="cycle-return">An ongoing planning process, with room to explore and change direction.</p></figure></section>
-<div class="two-up"><section><h2><span>04</span> A shared planning process</h2><div class="meeting-card"><ul><li><strong>Students</strong> set goals and own their path.</li><li><strong>Parents</strong> review and support decisions.</li><li><strong>Counselors</strong> guide planning and help validate choices.</li></ul></div></section>
-<section><h2><span>05</span> Where the concept stands</h2><p>Start with parent-involved planning before applications. Integration with school planning is a future direction.</p><aside class="parent-note"><p>An early-stage concept. Poster figures are illustrative, not verified admissions benchmarks or admission probabilities.</p></aside></section></div>
-<div class="closing-strip"><strong>Keep the student at the center.</strong><span>Explore possibilities. Prepare deliberately. Revisit the plan together.</span></div>
-<div class="brochure-references"><p><strong>Related perspective:</strong> <a href="the-counselors-dilemma.html">If I could go back in time…</a> explores earlier planning, student agency, and counselor collaboration.</p></div>
-</div><footer class="page-footer"><span>NORTHBOUND WORKS</span><span>Find your direction · 1 / 1</span></footer></article>
+
+<div class="page-content jarvis-story">
+  <section class="j-intro" aria-label="The planning challenge">
+    <p class="j-lead">Choosing next year’s classes can feel like guessing at a future you can’t yet see.</p>
+    <p>Students have college aspirations. Parents want to help—but which choices build readiness, and which might close doors?</p>
+    <p>Project Jarvis is an early-stage UNC MEITE group project exploring how students, parents, and counselors can turn those aspirations into an academic plan they can review, approve, and adjust together.</p>
+  </section>
+
+  <section class="j-process" aria-labelledby="jarvis-process-title">
+    <h2 id="jarvis-process-title">From Aspirations to Aligned Plans</h2>
+    <p>Jarvis helps students and families turn college aspirations into a clear, actionable academic plan—and keeps it on track.</p>
+    <div class="j-steps">
+      <section class="j-step">
+        <h3><span class="j-number">1</span> Set Your Target(s)</h3>
+        <p>Select the colleges and programs you’re considering. See what a competitive applicant looks like.</p>
+        <div class="j-panel" aria-label="Illustrative college target profile">
+          <div class="j-college">
+            <svg viewBox="0 0 70 100" role="img" aria-label="Stylized campus building">
+              <rect width="70" height="100" fill="#dff1f3"/>
+              <path d="M0 78 Q18 65 36 78 T70 74 V100 H0Z" fill="#80CDD0"/>
+              <path d="M8 47 H62 V87 H8Z" fill="#2D79AD"/>
+              <path d="M5 47 L35 30 L65 47Z" fill="#103554"/>
+              <path d="M27 32 V83 H43 V32 L35 19Z" fill="#FAF8F0" stroke="#103554" stroke-width="2"/>
+              <path d="M35 19 V7 L48 11 L35 15" fill="#FF591F" stroke="#103554"/>
+              <g fill="#FAF8F0"><path d="M13 54H19V63H13ZM22 54H26V63H22ZM46 54H51V63H46ZM54 54H59V63H54ZM13 69H19V78H13ZM54 69H59V78H54Z"/></g>
+              <path d="M31 83V68Q35 60 39 68V83" fill="#103554"/>
+              <path d="M23 87H47M19 91H51" stroke="#103554" stroke-width="3"/>
+              <circle cx="35" cy="44" r="5" fill="#80CDD0" stroke="#103554"/>
+            </svg>
+            <div><strong>NC State University</strong><small>Mechanical Engineering</small></div>
+          </div>
+          <dl class="j-facts">
+            <div><dt>GPA (middle 50%)</dt><dd>3.8–4.1</dd></div>
+            <div><dt>SAT (middle 50%)</dt><dd>1380–1510</dd></div>
+            <div><dt>Course rigor</dt><dd>High</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="j-step">
+        <h3><span class="j-number">2</span> Assess Your Readiness</h3>
+        <p>Compare your current academic profile to target benchmarks. Identify strengths, gaps, and opportunities.</p>
+        <div class="j-panel">
+          <h4>Readiness Snapshot</h4>
+          <div class="j-bar-row"><div class="j-bar-label"><span>Overall readiness</span><strong>72%</strong></div><div class="j-track" aria-hidden="true"><span class="j-fill" style="width:72%"></span></div></div>
+          <div class="j-bar-row"><div class="j-bar-label"><span>Course rigor</span><strong>85%</strong></div><div class="j-track" aria-hidden="true"><span class="j-fill" style="width:85%"></span></div></div>
+          <div class="j-bar-row"><div class="j-bar-label"><span>GPA</span><strong>68%</strong></div><div class="j-track" aria-hidden="true"><span class="j-fill j-gap" style="width:68%"></span></div></div>
+          <div class="j-bar-row"><div class="j-bar-label"><span>Math preparation</span><strong>60%</strong></div><div class="j-track" aria-hidden="true"><span class="j-fill j-gap" style="width:60%"></span></div></div>
+          <div class="j-bar-row"><div class="j-bar-label"><span>Key prerequisites</span><strong>90%</strong></div><div class="j-track" aria-hidden="true"><span class="j-fill" style="width:90%"></span></div></div>
+        </div>
+      </section>
+      <section class="j-step">
+        <h3><span class="j-number">3</span> Build Your Academic Plan</h3>
+        <p>Translate insights into a multiyear plan with course recommendations, milestones, and options to keep doors open.</p>
+        <div class="j-panel">
+          <h4>Your Academic Plan</h4>
+          <ol class="j-years">
+            <li><strong>9th Grade</strong><p>Build a strong foundation.</p></li>
+            <li><strong>10th Grade</strong><p>Increase rigor in math &amp; science.</p></li>
+            <li><strong>11th Grade</strong><p>Advance preparation and explore related opportunities.</p></li>
+            <li><strong>12th Grade</strong><p>Complete key requirements and maintain options.</p></li>
+          </ol>
+        </div>
+      </section>
+      <section class="j-step">
+        <h3><span class="j-number">4</span> Reassess and Adjust</h3>
+        <p>As grades, interests, and goals change, revisit your readiness and update the plan.</p>
+        <div class="j-panel">
+          <h4>Progress Over Time</h4>
+          <svg class="j-progress" viewBox="0 0 240 180" role="img" aria-labelledby="progress-title progress-desc">
+            <title id="progress-title">Illustrative progress over four reviews</title><desc id="progress-desc">Four connected points rise from left to right, representing an example of improving readiness. This is not measured student data.</desc>
+            <path d="M24 20V150H225" fill="none" stroke="#90b4c5" stroke-width="2"/>
+            <path d="M42 124L98 95L154 63L210 35V150H42Z" fill="#eaf4f2"/>
+            <path d="M42 124L98 95" stroke="#2D79AD" stroke-width="4"/><path d="M98 95L154 63" stroke="#25888b" stroke-width="4"/><path d="M154 63L210 35" stroke="#FF591F" stroke-width="4"/>
+            <g stroke="#fff" stroke-width="2"><circle cx="42" cy="124" r="8" fill="#2D79AD"/><circle cx="98" cy="95" r="8" fill="#25888b"/><circle cx="154" cy="63" r="8" fill="#80CDD0"/><circle cx="210" cy="35" r="8" fill="#FF591F"/></g>
+            <g fill="#486373" font-family="Arial,sans-serif" font-size="11" text-anchor="middle"><text x="42" y="168">Review 1</text><text x="98" y="168">2</text><text x="154" y="168">3</text><text x="210" y="168">4</text></g>
+          </svg>
+          <p class="j-reminder">Stay on track.<br>Adjust when needed.<br>Keep your options open.</p>
+        </div>
+      </section>
+    </div>
+    <p class="j-caption">Illustrative concept data—not verified admissions benchmarks or admission probabilities. Sample plans and progress are examples, not predictions.</p>
+  </section>
+
+  <div class="j-bottom">
+    <section><h2>A Shared Planning Process</h2><ul class="j-roles">
+      <li><strong>Students</strong> set goals and own their path.</li>
+      <li><strong>Parents</strong> review and approve decisions.</li>
+      <li><strong>Counselors</strong> guide planning and help validate choices.</li>
+    </ul></section>
+    <section><h2>Where the Concept Stands</h2><p><strong>Now:</strong> Parent involved academic planning that positions students to preserve options and move towards college goals.</p><p class="j-future"><strong>Future:</strong> Integration with school planning processes.</p></section>
+  </div>
+  <div class="brochure-references"><p><strong>Related perspective:</strong> <a href="the-counselors-dilemma.html">If I could go back in time…</a> explores earlier planning, student agency, and counselor collaboration.</p></div>
+</div>
+<footer class="page-footer"><span>NORTHBOUND WORKS</span><span>Find your direction · 1 / 1</span></footer></article>
 <a class="editorial-back" href="index.html#work">← Back to Projects &amp; Ideas</a></main></body></html>
