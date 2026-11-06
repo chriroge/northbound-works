@@ -76,3 +76,17 @@
  #work .work-cta { font-size: .875rem; }
  #work .work-related { font-size: .75rem; padding: .6rem .2rem; }
 }
+/* Preserve the four-card overview and visible Explore links on laptop screens. */
+@media (min-width: 1100px) and (max-height: 800px) {
+    #work { padding: 1rem 0; scroll-margin-top: 4.5rem; }
+    #work .section-title { font-size: 1.75rem; margin-bottom: .25rem; }
+    #work .section-description { font-size: .9375rem; margin-bottom: .75rem; }
+    #work .work-group { padding: .75rem; gap: .75rem; }
+    #work .work-group-heading { font-size: 1.1rem; }
+    #work .work-grid { gap: .9rem; }
+    #work .work-image { height: clamp(85px, 15vh, 115px); }
+    #work .work-copy { padding: .85rem; }
+    #work .work-copy h3 { font-size: 1.2rem; margin-bottom: .6rem; }
+    #work .work-copy p:not(.work-label) { font-size: .875rem; line-height: 1.45; margin-bottom: .6rem; }
+    #work .work-label { margin-bottom: .5rem; }
+}

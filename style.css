@@ -1270,3 +1270,17 @@ section[id] {
 .about-projects-cta .btn-secondary { background-color: #FFFFFF; }
 .about-projects-cta .btn-secondary:hover { background-color: var(--navy); }
 @media (max-width: 800px) { .about-projects-cta { justify-content: center; } }
+/* Keep the complete About overview visible in shorter desktop windows. */
+@media (min-width: 1000px) and (max-height: 800px) {
+    #about { padding: 1rem 0; scroll-margin-top: 4.5rem; }
+    #about .northbound-about { grid-template-columns: 180px minmax(0, 1fr); column-gap: 2rem; row-gap: .75rem; }
+    #about .about-heading { font-size: 1.75rem; margin-bottom: .6rem; }
+    #about .about-text p { font-size: .9375rem; line-height: 1.55; margin-bottom: .75rem; }
+    #about .about-text .about-statement { font-size: .9375rem; line-height: 1.55; margin-bottom: .75rem; }
+    #about .about-text .about-closing { font-size: 1.25rem; line-height: 1.4; margin-top: 1rem; margin-bottom: 0; }
+    #about .about-journey-card { padding: .85rem; gap: .5rem; }
+    #about .about-journey-title { font-size: 1.1rem; }
+    #about .about-journey-description { font-size: .8rem; line-height: 1.45; }
+    #about .about-journey-label { font-size: .6rem; }
+    #about .about-projects-cta a { padding-top: .7rem; padding-bottom: .7rem; }
+}
