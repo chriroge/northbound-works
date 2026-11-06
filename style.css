@@ -912,6 +912,9 @@ section[id] {
 }
 
 .about-projects-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     grid-area: projects;
     align-self: end;
     justify-self: start;
@@ -1261,3 +1264,9 @@ section[id] {
         grid-template-columns: 1fr;
     }
 }
+
+/* Paired About actions retain the career-card bottom alignment. */
+.about-projects-cta a { width: 15.5rem; max-width: 100%; display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem 1.25rem; }
+.about-projects-cta .btn-secondary { background-color: #FFFFFF; }
+.about-projects-cta .btn-secondary:hover { background-color: var(--navy); }
+@media (max-width: 800px) { .about-projects-cta { justify-content: center; } }
