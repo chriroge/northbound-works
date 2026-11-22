@@ -1366,3 +1366,15 @@ body #about { scroll-margin-top: var(--nav-height, 5rem); min-height: calc(100sv
     .hero .hero-brand .hero-logo { width: 110px; }
     .hero .hero-cta a { max-width: 100%; }
 }
+
+/* Pair the campus illustration with lessons behind the career history. */
+body #about { padding: 2rem 0; }
+#about .about-career { grid-area: journey; display: grid; gap: 1rem; }
+#about .about-campus { display: block; width: 100%; height: auto; border-radius: 12px; }
+#about .about-career .about-journey-card { grid-area: auto; padding: 1rem; gap: .65rem; }
+#about .about-career .about-journey-title { font-size: 1.3rem; }
+#about .about-career .about-journey-description { font-size: 1rem; line-height: 1.5; }
+@media (max-width: 600px) {
+    #about .about-career { width: 100%; max-width: 360px; }
+    #about .about-career .about-journey-card { max-width: none; }
+}
