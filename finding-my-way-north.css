@@ -1083,3 +1083,38 @@ html {
         box-shadow: none;
     }
 }
+
+/* Keep the introduction compact and put the lessons within easy reach. */
+.nbm-hero { min-height: 0; padding: 2rem 0 3rem; gap: 3rem; }
+.nbm-brand { margin-bottom: 1rem; }
+.nbm-brand img { width: 110px; }
+.nbm-hero h1 { font-size: clamp(2.3rem, 4vw, 3.2rem); letter-spacing: -.035em; }
+.nbm-deck { font-size: 1.3rem; }
+.nbm-intro { font-size: 1rem; }
+.nbm-hero-mark { width: min(100%, 280px); justify-self: end; gap: .85rem; }
+.nbm-rowing-story { font-size: .875rem; line-height: 1.55; }
+.nbm-journey { padding: 2.5rem 0 3rem; scroll-margin-top: 5rem; }
+.nbm-section-heading h2, .nbm-now h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); letter-spacing: -.025em; }
+.nbm-detail-panel { min-height: 0; }
+.nbm-detail-panel h3 { font-size: clamp(1.6rem, 2.5vw, 2rem); }
+.nbm-detail-grid dd { font-size: .95rem; }
+.nbm-detail-setting span, .nbm-detail-grid dt { font-size: .72rem; }
+.nbm-playbook { padding-bottom: 3rem; }
+.nbm-playbook-grid article { min-height: 0; }
+.nbm-playbook-grid p { font-size: .95rem; }
+.nbm-now { padding: 2.5rem; }
+.nbm-portfolio-context { padding: 3rem 0; }
+#station-detail { scroll-margin-top: 5rem; }
+@media (max-width: 940px) {
+    .nbm-hero { grid-template-columns: minmax(0, 1fr) 240px; gap: 2rem; }
+}
+@media (max-width: 680px) {
+    .nbm-nav-inner { flex-wrap: wrap; justify-content: center; gap: .4rem; padding: .65rem 0; }
+    .nbm-home-link { font-size: 1rem; }
+    .nbm-nav-actions { flex-wrap: wrap; justify-content: center; gap: .75rem; width: 100%; }
+    .nbm-hero { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 0; }
+    .nbm-hero-mark { width: min(100%, 320px); justify-self: center; }
+    .nbm-journey { padding-top: 2rem; }
+    .nbm-now { padding: 1.5rem; }
+    #career-map, #station-detail { scroll-margin-top: 7rem; }
+}
