@@ -10,11 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="finding-my-way-north.css?v=career-lessons-1">
-    <script src="finding-my-way-north.js?v=career-lessons-1" defer></script>
+    <link rel="stylesheet" href="finding-my-way-north.css?v=career-transit-1">
+    <script src="finding-my-way-north.js?v=career-transit-1" defer></script>
 </head>
 <body class="north-map-page">
-    <a class="nbm-skip-link" href="#main-content">Skip to the career map</a>
+    <a class="nbm-skip-link" href="#career-map">Skip to the career map</a>
 
     <nav class="nbm-nav" aria-label="Main navigation">
         <div class="nbm-nav-inner">
@@ -58,112 +58,95 @@
         <section class="nbm-journey" id="career-map" aria-labelledby="career-map-heading">
             <div class="nbm-section-heading">
                 <div>
-                    <p class="nbm-section-label">The career map</p>
-                    <h2 id="career-map-heading">What each chapter taught me</h2>
+                    <h2 id="career-map-heading">The career map</h2>
                 </div>
-                <p>Select a station to see the challenge, what I did, and what I learned.</p>
+                <p id="map-instructions">Choose a stop. <span class="nbm-desktop-instruction">Its lesson appears on the right.</span><span class="nbm-mobile-instruction">Its lesson opens below the map.</span></p>
             </div>
 
             <div class="nbm-journey-layout">
-                <div class="nbm-map-visual" aria-label="Eight lessons from project work to complex shared challenges">
-                    <div class="nbm-scope-axis" aria-hidden="true">
-                        <span>Broader system</span>
-                        <span class="nbm-axis-line"></span>
-                        <span>First project</span>
-                    </div>
-
+                <div class="nbm-map-visual" aria-label="Eight career lessons" aria-describedby="map-instructions">
+                    <div class="nbm-map-caption"><span>Career route</span><span>8 stops · 25+ years</span></div>
                     <div class="nbm-route-canvas">
-                        <div class="nbm-north-marker" aria-hidden="true"><span>N</span><i></i></div>
-                        <svg class="nbm-route-svg" viewBox="0 0 1000 1000" role="img" aria-label="A northbound route connecting eight career lessons">
-                            <defs>
-                                <linearGradient id="nbm-route-gradient" x1="0" y1="1" x2="1" y2="0">
-                                    <stop offset="0" stop-color="#457B9D"/>
-                                    <stop offset="0.72" stop-color="#1D3557"/>
-                                    <stop offset="1" stop-color="#E76F51"/>
-                                </linearGradient>
-                                <filter id="nbm-route-shadow" x="-30%" y="-30%" width="160%" height="160%">
-                                    <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#1D3557" flood-opacity="0.12"/>
-                                </filter>
-                                <marker id="nbm-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
-                                    <path d="M0,0 L10,5 L0,10 Z" fill="#E76F51"/>
-                                </marker>
-                            </defs>
-                            <path class="nbm-route-underlay" d="M180 890 C235 865 280 815 350 780 S465 710 530 680 S665 615 710 570 S670 485 580 440 S440 385 390 340 S455 250 580 210 S700 130 770 92"/>
-                            <path class="nbm-route-line" d="M180 890 C235 865 280 815 350 780 S465 710 530 680 S665 615 710 570 S670 485 580 440 S440 385 390 340 S455 250 580 210 S700 130 770 92" marker-end="url(#nbm-arrow)"/>
-                            <g class="nbm-route-dots" aria-hidden="true">
-                                <circle cx="180" cy="890" r="17"/>
-                                <circle cx="350" cy="780" r="17"/>
-                                <circle cx="530" cy="680" r="17"/>
-                                <circle cx="710" cy="570" r="17"/>
-                                <circle cx="580" cy="440" r="17"/>
-                                <circle cx="390" cy="340" r="17"/>
-                                <circle cx="580" cy="210" r="17"/>
-                                <circle class="nbm-current-dot" cx="770" cy="92" r="20"/>
+                        <svg class="nbm-route-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <g class="nbm-map-streets">
+                                <path d="M0 20 H100 M0 46 H100 M0 72 H100 M15 0 V100 M50 0 V100 M85 0 V100"/>
+                                <path d="M0 96 L26 70 V48 L63 11 H100 M0 4 L38 42 H65 L100 77"/>
                             </g>
+                            <path class="nbm-route-underlay" d="M25 8 H84 Q92 8 92 16 V25 Q92 33 84 33 H16 Q8 33 8 41 V50 Q8 58 16 58 H84 Q92 58 92 66 V75 Q92 83 84 83 H25"/>
+                            <path class="nbm-route-line" d="M25 8 H84 Q92 8 92 16 V25 Q92 33 84 33 H16 Q8 33 8 41 V50 Q8 58 16 58 H84 Q92 58 92 66 V75 Q92 83 84 83 H25"/>
                         </svg>
-
-                        <ol class="nbm-station-list">
-                            <li class="nbm-map-station" id="station-1" style="--station-x:18%; --station-y:89%;">
-                                <button type="button" id="station-button-1" data-station="0" aria-controls="station-detail" aria-expanded="true" aria-current="step">
+                        <ol class="nbm-station-list" aria-label="Choose a career lesson">
+                            <li class="nbm-map-station" id="station-1" style="--station-x:25%; --station-y:8%;">
+                                <button type="button" id="station-button-1" data-station="0" aria-controls="station-detail" aria-pressed="true">
                                     <span class="nbm-station-number">01</span>
-                                    <span class="nbm-station-copy"><strong>Earn trust through follow-through</strong><small>Consulting · Project</small></span>
+                                    <span class="nbm-station-copy"><strong>Earn trust</strong></span>
+                                    <span class="nbm-station-selected" aria-hidden="true">Selected</span>
                                 </button>
                             </li>
-                            <li class="nbm-map-station" id="station-2" style="--station-x:35%; --station-y:78%;">
-                                <button type="button" id="station-button-2" data-station="1" aria-controls="station-detail" aria-expanded="false">
+                            <li class="nbm-map-station" id="station-2" style="--station-x:75%; --station-y:8%;">
+                                <button type="button" id="station-button-2" data-station="1" aria-controls="station-detail" aria-pressed="false">
                                     <span class="nbm-station-number">02</span>
-                                    <span class="nbm-station-copy"><strong>Connect people and expertise</strong><small>Cisco Finance · Market</small></span>
+                                    <span class="nbm-station-copy"><strong>Connect expertise</strong></span>
+                                    <span class="nbm-station-selected" aria-hidden="true">Selected</span>
                                 </button>
                             </li>
-                            <li class="nbm-map-station" id="station-3" style="--station-x:53%; --station-y:68%;">
-                                <button type="button" id="station-button-3" data-station="2" aria-controls="station-detail" aria-expanded="false">
+                            <li class="nbm-map-station" id="station-3" style="--station-x:75%; --station-y:33%;">
+                                <button type="button" id="station-button-3" data-station="2" aria-controls="station-detail" aria-pressed="false">
                                     <span class="nbm-station-number">03</span>
-                                    <span class="nbm-station-copy"><strong>Find a responsible path forward</strong><small>Cisco Finance · Removing barriers</small></span>
+                                    <span class="nbm-station-copy"><strong>Work through constraints</strong></span>
+                                    <span class="nbm-station-selected" aria-hidden="true">Selected</span>
                                 </button>
                             </li>
-                            <li class="nbm-map-station" id="station-4" style="--station-x:71%; --station-y:57%;">
-                                <button type="button" id="station-button-4" data-station="3" aria-controls="station-detail" aria-expanded="false">
+                            <li class="nbm-map-station" id="station-4" style="--station-x:25%; --station-y:33%;">
+                                <button type="button" id="station-button-4" data-station="3" aria-controls="station-detail" aria-pressed="false">
                                     <span class="nbm-station-number">04</span>
-                                    <span class="nbm-station-copy"><strong>Change how the business works</strong><small>Cisco Operations · Business model</small></span>
+                                    <span class="nbm-station-copy"><strong>Change the business</strong></span>
+                                    <span class="nbm-station-selected" aria-hidden="true">Selected</span>
                                 </button>
                             </li>
-                            <li class="nbm-map-station" id="station-5" style="--station-x:58%; --station-y:44%;">
-                                <button type="button" id="station-button-5" data-station="4" aria-controls="station-detail" aria-expanded="false">
+                            <li class="nbm-map-station" id="station-5" style="--station-x:25%; --station-y:58%;">
+                                <button type="button" id="station-button-5" data-station="4" aria-controls="station-detail" aria-pressed="false">
                                     <span class="nbm-station-number">05</span>
-                                    <span class="nbm-station-copy"><strong>Demonstrate a better way to work</strong><small>Cisco Operations · Transition</small></span>
+                                    <span class="nbm-station-copy"><strong>Show what works</strong></span>
+                                    <span class="nbm-station-selected" aria-hidden="true">Selected</span>
                                 </button>
                             </li>
-                            <li class="nbm-map-station" id="station-6" style="--station-x:39%; --station-y:34%;">
-                                <button type="button" id="station-button-6" data-station="5" aria-controls="station-detail" aria-expanded="false">
+                            <li class="nbm-map-station" id="station-6" style="--station-x:75%; --station-y:58%;">
+                                <button type="button" id="station-button-6" data-station="5" aria-controls="station-detail" aria-pressed="false">
                                     <span class="nbm-station-number">06</span>
-                                    <span class="nbm-station-copy"><strong>Design around the customer</strong><small>Cisco Meraki · Organization</small></span>
+                                    <span class="nbm-station-copy"><strong>Design for customers</strong></span>
+                                    <span class="nbm-station-selected" aria-hidden="true">Selected</span>
                                 </button>
                             </li>
-                            <li class="nbm-map-station" id="station-7" style="--station-x:58%; --station-y:21%;">
-                                <button type="button" id="station-button-7" data-station="6" aria-controls="station-detail" aria-expanded="false">
+                            <li class="nbm-map-station" id="station-7" style="--station-x:75%; --station-y:83%;">
+                                <button type="button" id="station-button-7" data-station="6" aria-controls="station-detail" aria-pressed="false">
                                     <span class="nbm-station-number">07</span>
-                                    <span class="nbm-station-copy"><strong>Apply AI to the right problems</strong><small>Accenture at Microsoft · AI in sales</small></span>
+                                    <span class="nbm-station-copy"><strong>Apply AI thoughtfully</strong></span>
+                                    <span class="nbm-station-selected" aria-hidden="true">Selected</span>
                                 </button>
                             </li>
-                            <li class="nbm-map-station nbm-map-station-current" id="station-8" style="--station-x:77%; --station-y:9%;">
-                                <button type="button" id="station-button-8" data-station="7" aria-controls="station-detail" aria-expanded="false">
+                            <li class="nbm-map-station" id="station-8" style="--station-x:25%; --station-y:83%;">
+                                <button type="button" id="station-button-8" data-station="7" aria-controls="station-detail" aria-pressed="false">
                                     <span class="nbm-station-number">08</span>
-                                    <span class="nbm-station-copy"><strong>Work on complex shared problems</strong><small>Northbound Works · Current focus</small></span>
+                                    <span class="nbm-station-copy"><strong>Address shared challenges</strong></span>
+                                    <span class="nbm-station-selected" aria-hidden="true">Selected</span>
                                 </button>
                             </li>
                         </ol>
                     </div>
+                    <div class="nbm-map-key"><span>01 · Early career</span><span>08 · Current focus</span></div>
                 </div>
 
-                <aside class="nbm-detail-panel" id="station-detail" aria-live="polite" aria-labelledby="detail-title">
+                <aside class="nbm-detail-panel" id="station-detail" aria-labelledby="detail-title">
                     <div class="nbm-detail-topline">
-                        <p><span id="detail-number">Station 01</span> <span aria-hidden="true">/</span> <span id="detail-scale">Project</span></p>
-                        <span class="nbm-detail-progress" id="detail-progress">1 of 8</span>
+                        <span class="nbm-detail-number" id="detail-number">01</span>
+                        <p>Selected lesson <span class="nbm-detail-progress" id="detail-progress">1 of 8</span></p>
+                        <span class="nbm-detail-scale" id="detail-scale">Project</span>
                     </div>
-                    <h3 id="detail-title">Earn trust through follow-through</h3>
+                    <p class="nbm-sr-only" id="lesson-status" role="status" aria-live="polite" aria-atomic="true"></p>
+                    <h3 id="detail-title" tabindex="-1">Earn trust through follow-through</h3>
 
                     <div class="nbm-detail-setting">
-                        <span>Setting</span>
                         <p id="detail-setting">Consulting · Early career</p>
                     </div>
 
@@ -182,12 +165,16 @@
                         </div>
                     </dl>
 
-                    <blockquote id="detail-lesson">Trust grows when people can count on you to follow through.</blockquote>
+                    <div class="nbm-lesson-takeaway">
+                        <p>What I learned</p>
+                        <blockquote id="detail-lesson">Trust grows when people can count on you to follow through.</blockquote>
+                    </div>
 
                     <div class="nbm-detail-controls" aria-label="Career map navigation">
-                        <button type="button" id="previous-station" disabled><span aria-hidden="true">←</span> Previous</button>
-                        <button type="button" id="next-station">Next <span aria-hidden="true">→</span></button>
+                        <button type="button" id="previous-station" disabled>Previous lesson</button>
+                        <button type="button" id="next-station">Next lesson</button>
                     </div>
+                    <a class="nbm-back-to-map" href="#career-map">Back to all eight stops</a>
                 </aside>
             </div>
         </section>

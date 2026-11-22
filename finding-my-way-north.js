@@ -1,6 +1,9 @@
 (() => {
     'use strict';
 
+    // Deep links should show the complete map, rather than a single stop halfway down it.
+    window.history.scrollRestoration = 'manual';
+
     const stations = [
         {
             "number": "01",
@@ -86,6 +89,8 @@
 
     const buttons = Array.from(document.querySelectorAll('.nbm-map-station button'));
     const panel = document.querySelector('#station-detail');
+    const status = document.querySelector('#lesson-status');
+    const map = document.querySelector('#career-map');
     const previousButton = document.querySelector('#previous-station');
     const nextButton = document.querySelector('#next-station');
     const fields = {
@@ -105,20 +110,16 @@
     function updateStation(index, options = {}) {
         const safeIndex = Math.max(0, Math.min(stations.length - 1, index));
         const station = stations[safeIndex];
+        const focusedControl = document.activeElement;
 
         activeIndex = safeIndex;
 
         buttons.forEach((button, buttonIndex) => {
             const selected = buttonIndex === safeIndex;
-            button.setAttribute('aria-expanded', String(selected));
-            if (selected) {
-                button.setAttribute('aria-current', 'step');
-            } else {
-                button.removeAttribute('aria-current');
-            }
+            button.setAttribute('aria-pressed', String(selected));
         });
 
-        fields.number.textContent = `Station ${station.number}`;
+        fields.number.textContent = station.number;
         fields.scale.textContent = station.scale;
         fields.progress.textContent = `${safeIndex + 1} of ${stations.length}`;
         fields.title.textContent = station.title;
@@ -127,9 +128,14 @@
         fields.obstacle.textContent = station.obstacle;
         fields.intervention.textContent = station.intervention;
         fields.lesson.textContent = station.lesson;
+        status.textContent = `Lesson ${safeIndex + 1} of ${stations.length}: ${station.title}.`;
 
         previousButton.disabled = safeIndex === 0;
         nextButton.disabled = safeIndex === stations.length - 1;
+        if ((focusedControl === previousButton && previousButton.disabled) ||
+            (focusedControl === nextButton && nextButton.disabled)) {
+            fields.title.focus({ preventScroll: true });
+        }
 
         const hash = `#station-${safeIndex + 1}`;
         if (window.location.hash !== hash) {
@@ -137,12 +143,14 @@
         }
 
         if (options.focusButton) {
-            buttons[safeIndex].focus();
+            buttons[safeIndex].focus({ preventScroll: true });
         }
 
-        if (options.revealPanel && window.matchMedia('(max-width: 940px)').matches) {
+        if (options.revealPanel && window.matchMedia('(max-width: 1000px)').matches) {
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             panel.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        } else if (options.revealPanel) {
+            map.scrollIntoView({ behavior: 'instant', block: 'start' });
         }
     }
 
@@ -167,11 +175,20 @@
         });
     });
 
-    previousButton.addEventListener('click', () => updateStation(activeIndex - 1, { focusButton: true }));
-    nextButton.addEventListener('click', () => updateStation(activeIndex + 1, { focusButton: true }));
+    previousButton.addEventListener('click', () => updateStation(activeIndex - 1, { revealPanel: true }));
+    nextButton.addEventListener('click', () => updateStation(activeIndex + 1, { revealPanel: true }));
+
+    document.querySelector('.nbm-back-to-map').addEventListener('click', (event) => {
+        event.preventDefault();
+        window.history.replaceState(null, '', '#career-map');
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        map.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        buttons[activeIndex].focus({ preventScroll: true });
+    });
 
     const hashMatch = window.location.hash.match(/^#station-([1-8])$/);
     if (hashMatch) {
         updateStation(Number(hashMatch[1]) - 1);
+        window.addEventListener('load', () => map.scrollIntoView({ behavior: 'instant', block: 'start' }), { once: true });
     }
 })();
