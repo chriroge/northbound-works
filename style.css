@@ -1367,14 +1367,68 @@ body #about { scroll-margin-top: var(--nav-height, 5rem); min-height: calc(100sv
     .hero .hero-cta a { max-width: 100%; }
 }
 
-/* Pair the campus illustration with lessons behind the career history. */
+/* About: the career story leads, with the resume beside it. */
 body #about { padding: 2rem 0; }
-#about .about-career { grid-area: journey; display: grid; gap: 1rem; }
-#about .about-campus { display: block; width: 100%; height: auto; border-radius: 12px; }
-#about .about-career .about-journey-card { grid-area: auto; padding: 1rem; gap: .65rem; }
-#about .about-career .about-journey-title { font-size: 1.3rem; }
-#about .about-career .about-journey-description { font-size: 1rem; line-height: 1.5; }
+#about .northbound-about {
+    grid-template-areas: 'copy campus' 'journey resume';
+    column-gap: 3rem;
+    row-gap: 1.25rem;
+}
+#about .about-text p:last-child { margin-bottom: 0; }
+#about .about-campus {
+    grid-area: campus;
+    align-self: center;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+#about .about-journey-card {
+    grid-area: journey;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 1rem 1.25rem;
+    gap: .6rem;
+}
+#about .about-journey-route { width: min(100%, 180px); }
+#about .about-journey-title { font-size: 1.3rem; }
+#about .about-journey-description { font-size: 1rem; line-height: 1.5; }
+#about .about-resume {
+    grid-area: resume;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .85rem;
+    text-align: center;
+}
+#about .about-resume p {
+    max-width: 25ch;
+    margin: 0;
+    color: #40576E;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+#about .about-resume .btn-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14rem;
+    max-width: 100%;
+    padding: .75rem 1rem;
+    background: #FFFFFF;
+}
+#about .about-resume .btn-secondary:hover { background: var(--navy); }
+@media (min-width: 1000px) and (max-height: 800px) {
+    body #about { padding: 1.25rem 0; }
+}
+@media (max-width: 800px) {
+    #about .northbound-about { column-gap: 2rem; }
+}
 @media (max-width: 600px) {
-    #about .about-career { width: 100%; max-width: 360px; }
-    #about .about-career .about-journey-card { max-width: none; }
+    #about .northbound-about { grid-template-areas: 'copy' 'campus' 'journey' 'resume'; }
+    #about .about-campus { width: min(100%, 280px); justify-self: center; }
+    #about .about-resume { align-items: flex-start; text-align: left; margin-top: .25rem; }
+    #about .about-resume p { max-width: none; }
 }
