@@ -119,21 +119,20 @@ html {
 
 .nbm-hero {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+    grid-template-columns: 240px minmax(0, 1fr);
     align-items: center;
-    gap: clamp(2rem, 7vw, 7rem);
-    min-height: calc(100svh - 4.25rem);
-    padding: clamp(3rem, 8vw, 7rem) 0;
+    gap: 2.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(69, 123, 157, 0.22);
 }
 
 .nbm-brand {
-    display: inline-block;
-    margin-bottom: 2.4rem;
+    display: block;
 }
 
 .nbm-brand img {
     display: block;
-    width: 142px;
+    width: 100%;
     height: auto;
     mix-blend-mode: multiply;
 }
@@ -149,26 +148,26 @@ html {
 }
 
 .nbm-hero h1 {
-    max-width: 760px;
-    margin-bottom: 1rem;
-    font-size: clamp(3.2rem, 8vw, 6.7rem);
-    letter-spacing: -0.055em;
+    margin-bottom: 0.4rem;
+    font-size: clamp(2rem, 3.5vw, 2.6rem);
+    letter-spacing: -0.035em;
     text-wrap: balance;
 }
 
 .nbm-deck {
-    max-width: 650px;
-    margin-bottom: 1.15rem;
+    margin-bottom: 0.65rem;
     font-family: var(--nbm-headline);
-    font-size: clamp(1.35rem, 2.4vw, 2rem);
+    font-size: 1.125rem;
+    font-weight: 500;
     line-height: 1.35;
 }
 
 .nbm-intro {
-    max-width: 700px;
-    margin-bottom: 1.8rem;
+    max-width: 76ch;
+    margin-bottom: 1rem;
     color: var(--nbm-ink-muted);
-    font-size: clamp(1rem, 1.4vw, 1.12rem);
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .nbm-start {
@@ -177,56 +176,22 @@ html {
     gap: 0.75rem;
     min-height: 48px;
     padding: 0.75rem 1.1rem;
-    border: 2px solid var(--nbm-navy);
+    border: 2px solid #FF591F;
     border-radius: 8px;
+    background: #FF591F;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 700;
     transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
+.north-map-page .nbm-start { color: #103554; }
+
 .nbm-start:hover {
     color: var(--nbm-white);
-    background: var(--nbm-navy);
+    background: #103554;
+    border-color: #103554;
     transform: translateY(-2px);
-}
-
-.nbm-hero-mark {
-    display: grid;
-    justify-items: stretch;
-    gap: 1.1rem;
-    width: min(32vw, 390px);
-    margin: 0;
-    padding: 0;
-}
-
-.nbm-rowing-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    border: 1px solid rgba(69, 123, 157, 0.24);
-    border-radius: 22px;
-    box-shadow: var(--nbm-shadow);
-}
-
-.nbm-rowing-caption {
-    padding-left: 1rem;
-    border-left: 3px solid var(--nbm-coral);
-}
-
-.nbm-rowing-label {
-    margin: 0 0 0.4rem;
-    font-family: var(--nbm-headline);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--nbm-navy);
-}
-
-.nbm-rowing-story {
-    margin: 0;
-    color: var(--nbm-ink-muted);
-    font-size: 0.79rem;
-    line-height: 1.65;
 }
 
 .nbm-throughline {
@@ -315,12 +280,12 @@ html {
 .nbm-station-copy strong { display: block; font-size: .875rem; line-height: 1.3; }
 .nbm-map-station button:hover .nbm-station-number { box-shadow: 0 0 0 5px #d9e9ed; }
 .nbm-map-station button:hover .nbm-station-copy { text-decoration: underline; text-underline-offset: 3px; }
-.nbm-map-station button[aria-pressed='true'] .nbm-station-number { border-color: var(--nbm-navy); background: var(--nbm-navy); color: var(--nbm-white); box-shadow: 0 0 0 3px #f5f8f7, 0 0 0 5px #b85c24; }
+.nbm-map-station button[aria-pressed='true'] .nbm-station-number { border-color: var(--nbm-navy); background: var(--nbm-navy); color: var(--nbm-white); box-shadow: 0 0 0 3px #f5f8f7, 0 0 0 5px #FF591F; }
 .nbm-map-station button[aria-pressed='true'] .nbm-station-copy { background: var(--nbm-navy); color: var(--nbm-white); }
 .nbm-detail-panel { display: flex; flex-direction: column; padding: .75rem 1.25rem; border-top: 3px solid #b85c24; }
 .nbm-detail-topline { display: flex; align-items: center; gap: .65rem; font-size: .875rem; line-height: 1.3; }
 .nbm-detail-topline p { margin: 0; font-weight: 700; }
-.nbm-detail-number { display: grid; place-items: center; width: 34px; height: 34px; flex: 0 0 34px; border-radius: 50%; color: white; background: var(--nbm-navy); box-shadow: 0 0 0 2px white, 0 0 0 4px #b85c24; font-weight: 700; }
+.nbm-detail-number { display: grid; place-items: center; width: 34px; height: 34px; flex: 0 0 34px; border-radius: 50%; color: white; background: var(--nbm-navy); box-shadow: 0 0 0 2px white, 0 0 0 4px #FF591F; font-weight: 700; }
 .nbm-detail-progress { margin-left: .3rem; color: var(--nbm-ink-muted); font-weight: 400; }
 .nbm-detail-scale { margin-left: auto; color: var(--nbm-ink-muted); font-size: .8125rem; }
 .nbm-detail-panel h3 { margin: .5rem 0 .4rem; font-size: 1.5rem; line-height: 1.2; letter-spacing: -.025em; }
@@ -525,14 +490,8 @@ html {
 
 @media (max-width: 940px) {
     .nbm-hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        padding-top: 4rem;
-    }
-
-    .nbm-hero-mark {
-        width: min(100%, 520px);
-        justify-self: center;
+        grid-template-columns: 190px minmax(0, 1fr);
+        gap: 1.5rem;
     }
 
     .nbm-section-heading {
@@ -573,19 +532,13 @@ html {
     }
 
     .nbm-brand {
-        margin-bottom: 1.7rem;
-    }
-
-    .nbm-brand img {
-        width: 120px;
+        width: 190px;
     }
 
     .nbm-hero {
-        padding: 3rem 0 4rem;
-    }
-
-    .nbm-hero h1 {
-        font-size: clamp(3.1rem, 17vw, 5rem);
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.25rem 0 1.5rem;
     }
 
     .nbm-throughline {
@@ -687,15 +640,7 @@ html {
     }
 }
 
-/* Keep the introduction compact and put the lessons within easy reach. */
-.nbm-hero { min-height: 0; padding: 2rem 0 3rem; gap: 3rem; }
-.nbm-brand { margin-bottom: 1rem; }
-.nbm-brand img { width: 110px; }
-.nbm-hero h1 { font-size: clamp(2.3rem, 4vw, 3.2rem); letter-spacing: -.035em; }
-.nbm-deck { font-size: 1.3rem; }
-.nbm-intro { font-size: 1rem; }
-.nbm-hero-mark { width: min(100%, 280px); justify-self: end; gap: .85rem; }
-.nbm-rowing-story { font-size: .875rem; line-height: 1.55; }
+/* Keep the supporting sections compact. */
 .nbm-journey { padding: 2.5rem 0 3rem; scroll-margin-top: 5rem; }
 .nbm-section-heading h2, .nbm-now h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); letter-spacing: -.025em; }
 .nbm-playbook { padding-bottom: 3rem; }
@@ -704,15 +649,10 @@ html {
 .nbm-now { padding: 2.5rem; }
 .nbm-portfolio-context { padding: 3rem 0; }
 #station-detail { scroll-margin-top: 5rem; }
-@media (max-width: 940px) {
-    .nbm-hero { grid-template-columns: minmax(0, 1fr) 240px; gap: 2rem; }
-}
 @media (max-width: 680px) {
     .nbm-nav-inner { flex-wrap: wrap; justify-content: center; gap: .4rem; padding: .65rem 0; }
     .nbm-home-link { font-size: 1rem; }
     .nbm-nav-actions { flex-wrap: wrap; justify-content: center; gap: .75rem; width: 100%; }
-    .nbm-hero { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 0; }
-    .nbm-hero-mark { width: min(100%, 320px); justify-self: center; }
     .nbm-journey { padding-top: 2rem; }
     .nbm-now { padding: 1.5rem; }
     #career-map, #station-detail { scroll-margin-top: 7rem; }
