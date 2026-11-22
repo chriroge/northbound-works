@@ -282,7 +282,7 @@ html {
 .nbm-map-station button:hover .nbm-station-copy { text-decoration: underline; text-underline-offset: 3px; }
 .nbm-map-station button[aria-pressed='true'] .nbm-station-number { border-color: var(--nbm-navy); background: var(--nbm-navy); color: var(--nbm-white); box-shadow: 0 0 0 3px #f5f8f7, 0 0 0 5px #FF591F; }
 .nbm-map-station button[aria-pressed='true'] .nbm-station-copy { background: var(--nbm-navy); color: var(--nbm-white); }
-.nbm-detail-panel { display: flex; flex-direction: column; padding: .75rem 1.25rem; border-top: 3px solid #b85c24; }
+.nbm-detail-panel { display: flex; flex-direction: column; padding: .75rem 1.25rem; border-top: 3px solid #FF591F; }
 .nbm-detail-topline { display: flex; align-items: center; gap: .65rem; font-size: .875rem; line-height: 1.3; }
 .nbm-detail-topline p { margin: 0; font-weight: 700; }
 .nbm-detail-number { display: grid; place-items: center; width: 34px; height: 34px; flex: 0 0 34px; border-radius: 50%; color: white; background: var(--nbm-navy); box-shadow: 0 0 0 2px white, 0 0 0 4px #FF591F; font-weight: 700; }
@@ -295,7 +295,7 @@ html {
 .nbm-detail-grid > div { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: .75rem; padding: .35rem 0; border-top: 1px solid #e0e8eb; }
 .nbm-detail-grid dt { color: var(--nbm-navy); font-size: .875rem; font-weight: 700; line-height: 1.5; }
 .nbm-detail-grid dd { margin: 0; color: var(--nbm-ink-muted); font-size: 1rem; line-height: 1.4; }
-.nbm-lesson-takeaway { margin: .4rem 0 .6rem; padding: .5rem .8rem; border-left: 3px solid #b85c24; background: var(--nbm-pale); }
+.nbm-lesson-takeaway { margin: .4rem 0 .6rem; padding: .5rem .8rem; border-left: 3px solid #FF591F; background: var(--nbm-pale); }
 .nbm-lesson-takeaway > p { margin: 0 0 .2rem; font-size: .875rem; font-weight: 700; }
 .nbm-detail-panel blockquote { margin: 0; font-size: 1rem; line-height: 1.4; }
 .nbm-detail-controls { display: flex; justify-content: space-between; gap: .75rem; margin-top: auto; }
