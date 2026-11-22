@@ -1343,3 +1343,29 @@ body #about { scroll-margin-top: var(--nav-height, 5rem); min-height: calc(100sv
     #about .northbound-about { grid-template-columns: 1fr; grid-template-areas: 'copy' 'journey'; }
     #about .about-journey-card { max-width: 360px; }
 }
+/* A single, centered introduction with a shared Northbound Works row. */
+.hero .hero-layout { max-width: 900px; grid-template-columns: 200px minmax(0, 1fr); grid-template-areas: 'portrait intro' 'brand brand'; column-gap: 2.5rem; row-gap: 2rem; align-items: center; }
+.hero .hero-content { grid-area: intro; display: block; }
+.hero .hero-identity { grid-area: portrait; max-width: none; }
+.hero .hero-portrait { max-width: 200px; }
+.hero .personal-heading { max-width: none; font-size: clamp(1.45rem, 2.25vw, 1.8rem); line-height: 1.25; margin-bottom: 1rem; text-wrap: balance; }
+.hero .hero-subtitle { font-size: 1rem; line-height: 1.65; margin-bottom: 1.25rem; }
+.hero .hero-cta { flex-direction: row; align-items: stretch; }
+.hero .hero-cta a { width: 12.5rem; padding: .65rem .85rem; font-size: .875rem; }
+.hero .hero-brand { grid-area: brand; width: 100%; max-width: none; margin: 0; padding: 1rem 2rem; border: 0; border-radius: 12px; background: #EAF4F2; gap: 2rem; justify-content: center; }
+.hero .hero-brand .hero-logo { width: 160px; mix-blend-mode: multiply; }
+.hero .hero-brand p { max-width: 34ch; font-size: 1rem; line-height: 1.55; }
+@media (max-width: 800px) {
+    .hero .hero-layout { grid-template-columns: 160px minmax(0, 1fr); gap: 1.5rem; }
+    .hero .hero-cta a { width: 11rem; }
+}
+@media (max-width: 600px) {
+    .hero .hero-layout { grid-template-columns: 1fr; grid-template-areas: 'portrait' 'intro' 'brand'; gap: 1.25rem; }
+    .hero .hero-identity { justify-self: start; }
+    .hero .hero-portrait { max-width: 110px; }
+    .hero .hero-brand { padding: 1rem; gap: 1rem; justify-content: flex-start; }
+    .hero .hero-brand .hero-logo { width: 110px; }
+    .hero .hero-brand p { font-size: .8rem; }
+    .hero .hero-cta { gap: .6rem; }
+    .hero .hero-cta a { width: auto; flex: 1 1 130px; }
+}
