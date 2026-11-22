@@ -1311,3 +1311,35 @@ section[id] {
     #about .about-journey-label { font-size: .6rem; }
     #about .about-projects-cta a { padding-top: .7rem; padding-bottom: .7rem; }
 }
+/* Review layout: one introduction, connected actions, and a compact career card. */
+.hero .hero-layout { max-width: 1100px; grid-template-columns: minmax(0, 1fr) 240px; align-items: start; gap: 4rem; }
+.hero .personal-heading { font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.2; max-width: 22ch; margin-bottom: 1.25rem; text-align: left; }
+.hero .hero-subtitle { max-width: 58ch; }
+.hero .hero-cta { justify-content: flex-start; align-items: flex-start; gap: .8rem; }
+.hero .hero-cta a, #about .about-projects-cta a { width: 14rem; padding: .75rem 1rem; }
+.hero .hero-identity { display: block; }
+.hero .hero-portrait { width: 100%; max-width: 240px; }
+.hero .hero-brand { display: flex; align-items: center; gap: 1.25rem; max-width: 470px; text-align: left; margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid #D5E3E6; }
+.hero .hero-brand .hero-logo { width: 150px; max-width: 40%; margin: 0; flex-shrink: 0; }
+.hero .hero-brand p { font-size: .875rem; margin: 0; }
+body #about { scroll-margin-top: var(--nav-height, 5rem); min-height: calc(100svh - var(--nav-height, 5rem)); padding: 2.5rem 0; }
+#about .northbound-about { max-width: 1100px; margin: 0 auto; grid-template-columns: minmax(0, 1fr) 310px; grid-template-areas: 'copy journey'; gap: 3rem; align-items: start; }
+#about .about-text { max-width: 65ch; }
+#about .about-heading { font-size: 1.8rem; margin-bottom: 1.25rem; }
+#about .about-text p { font-size: 1rem; line-height: 1.65; margin-bottom: 1rem; }
+#about .about-projects-cta { margin-top: 1.5rem; justify-content: flex-start; gap: .8rem; }
+#about .about-journey-card { align-self: start; padding: 1.5rem; gap: 1rem; }
+#about .about-journey-title { font-size: 1.4rem; }
+#about .about-journey-description { font-size: .95rem; line-height: 1.6; }
+@media (max-width: 800px) {
+    body #home.hero { scroll-margin-top: var(--nav-height, 10rem); }
+    .hero .hero-layout { grid-template-columns: minmax(0, 1fr) 140px; gap: 1.5rem; }
+    #about .northbound-about { grid-template-columns: minmax(0, 1fr) 250px; gap: 2rem; }
+}
+@media (max-width: 600px) {
+    .hero .hero-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+    .hero .hero-identity { display: block; max-width: 140px; }
+    .hero .hero-content { display: grid; grid-template-columns: 1fr; }
+    #about .northbound-about { grid-template-columns: 1fr; grid-template-areas: 'copy' 'journey'; }
+    #about .about-journey-card { max-width: 360px; }
+}

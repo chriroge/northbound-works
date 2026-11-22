@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christopher Rogers — Product and Innovation Leader | Northbound Works</title>
-    <link rel="stylesheet" href="style.css?v=personal-home-1">
+    <link rel="stylesheet" href="style.css?v=personal-layout-2">
     <link rel="stylesheet" href="article.css">
     <!-- Google Fonts as fallbacks -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,8 +30,7 @@
 <section id="home" class="hero">
         <div class="hero-layout">
             <div class="hero-content">
-                <h1 class="personal-heading">Christopher Rogers</h1>
-                <p class="professional-title">Product and Innovation Leader</p>
+                <h1 class="personal-heading">Product and Innovation Leader</h1>
 
                 <p class="hero-subtitle">
                     I bring experience in customer-centered design, product leadership, and project delivery
@@ -42,14 +41,15 @@
                     <a href="#work" class="btn-primary">My Projects &amp; Ideas</a>
                     <a href="#about" class="btn-secondary">About Me</a>
                 </div>
-            </div>
-
-            <div class="hero-identity">
-                <img src="images/Me.png" alt="Illustrated portrait of Chris Rogers" class="hero-portrait">
                 <div class="hero-brand">
                     <img src="images/New Logo. New Phrase PNG.png" alt="Northbound Works. Find direction. Move forward." class="hero-logo">
                     <p>My projects and ideas about learning, work, and change.</p>
                 </div>
+            </div>
+
+            <div class="hero-identity">
+                <img src="images/Me.png" alt="Illustrated portrait of Chris Rogers" class="hero-portrait">
+
             </div>
         </div>
     </section>
@@ -58,29 +58,23 @@
 <section id="about" class="about-section">
         <div class="container">
             <div class="northbound-about">
-                <img
-                    src="images/Me.png"
-                    alt="Illustrated portrait of Chris Rogers"
-                    class="about-portrait"
-                    loading="lazy"
-                >
+<div class="about-text">
+                    <h2 class="about-heading">About Me</h2>
 
-                <div class="about-text">
-                    <h2 class="about-heading">Hi, I’m Chris.</h2>
-
-                    <p>I help teams solve complex problems and turn ideas into practical improvements.</p>
-                    <p>For over 25 years, I’ve worked in customer-centered design, product leadership, and project delivery at Accenture, Cisco, and Cisco Meraki.</p>
+                    <p>I help teams solve complex problems and turn ideas into practical improvements. For over 25 years, I’ve worked in customer-centered design, product leadership, and project delivery at Accenture, Cisco, and Cisco Meraki.</p>
                     <p>I’m studying Educational Innovation, Technology, and Entrepreneurship at UNC–Chapel Hill and applying that experience to education.</p>
-                    <p>My approach is to set direction, connect people, remove obstacles, and test ideas in practice.</p>
-                    <p>I want to apply this experience in education, public good, and health.</p>
+                    <p>My approach is to set direction, connect people, remove obstacles, and test ideas in practice. I want to apply this experience in education, public good, and health.</p>
+                <div class="about-projects-cta">
+                    <a href="#work" class="btn-primary">My Projects &amp; Ideas</a>
+                    <a href="resume.html" class="btn-secondary">My Resume</a>
+                </div>
                 </div>
 
                 <a
                     href="finding-my-way-north.html"
                     class="about-journey-card"
-                    aria-label="Explore Finding My Way North, an interactive career map for EDUC 701 Milestone 3"
+                    aria-label="Explore Finding My Way North, an interactive career map"
                 >
-                    <span class="about-journey-label">EDUC 701 · MILESTONE 3</span>
                     <span class="about-journey-route" aria-hidden="true">
                         <span></span>
                         <span></span>
@@ -91,10 +85,7 @@
                     <span class="about-journey-cta">Explore →</span>
                 </a>
 
-                <div class="about-projects-cta">
-                    <a href="#work" class="btn-primary">My Projects &amp; Ideas</a>
-                    <a href="resume.html" class="btn-secondary">My Resume</a>
-                </div>
+
             </div>
 
         </div>
@@ -135,5 +126,10 @@
         </div>
     </footer>
 
+<script>
+// Keep section navigation aligned with the actual responsive header height.
+const siteNavigation = document.querySelector('.navbar');
+new ResizeObserver(() => document.documentElement.style.setProperty('--nav-height', siteNavigation.getBoundingClientRect().height + 'px')).observe(siteNavigation, { box: 'border-box' });
+</script>
 </body>
 </html>
