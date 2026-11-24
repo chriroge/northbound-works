@@ -1280,8 +1280,8 @@ section[id] {
 .hero-brand { max-width: 320px; text-align: center; }
 .hero-brand .hero-logo { max-width: 240px; margin: 0 auto; }
 .hero-brand p { font-size: .875rem; line-height: 1.5; margin: .5rem 0 0; }
-.contact-action { text-align: center; }
-.contact-action a { display: inline-block; }
+.contact-action { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; text-align: center; }
+.contact-action a { display: inline-block; max-width: 100%; padding: .85rem 1.25rem; overflow-wrap: anywhere; }
 @media (min-width: 1000px) {
     .hero .hero-layout { grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); }
 }
