@@ -16,6 +16,8 @@
 .work-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .school-preview img { object-position: 80% 20%; transform: scale(1.4); transform-origin: 80% 20%; }
 .jarvis-preview img { object-position: top center; }
+.junction-preview { background: #fff; }
+.junction-preview img { object-fit: contain; padding: .5rem; }
 .work-copy { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
 .work-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; margin-bottom: .8rem; color: #1D3557; }
 .work-copy h3 { font-size: 1.8rem; color: #1D3557; line-height: 1.2; margin: 0 0 1rem; }
@@ -56,17 +58,17 @@
 @media(max-width:650px) { .work-grid { grid-template-columns: 1fr; } .work-card { min-height: 0; } .work-image { height: 220px; } .jarvis-content { padding: 1.25rem; } .jarvis-steps { grid-template-columns: 1fr; } .jarvis-figure img { max-height: none; width: 100%; } }
 @media(prefers-reduced-motion:reduce) { .work-card { transition: none; } }
 
-/* A desktop overview keeps all four destinations visible together. */
+/* Three Learning & Work projects and two College Readiness projects. */
 @media(min-width:1100px) {
  #work { padding: 1.5rem 0 2rem; scroll-margin-top: 5rem; }
  #work .container { max-width: 1440px; }
  #work .section-title { font-size: 2rem; margin-bottom: .4rem; }
  #work .section-description { font-size: 1rem; max-width: 900px; margin-bottom: 1.25rem; }
- #work .work-groups { grid-template-columns: repeat(2,minmax(0,1fr)); align-items: stretch; }
- #work .work-group { display: grid; grid-template-rows: subgrid; grid-row: span 2; gap: 1rem; }
- #work .work-group-heading { margin: 0; }
- #work .work-grid { grid-template-columns: repeat(2,minmax(0,1fr)); grid-template-rows: subgrid; grid-row: span 1; gap: 1.25rem; align-items: stretch; }
- #work .work-item { display: grid; grid-template-rows: subgrid; grid-row: span 1; }
+ #work .work-groups { grid-template-columns: 1fr; }
+ #work .work-group-heading { margin: 0 0 1rem; }
+ #work .work-grid { gap: 1.25rem; align-items: stretch; }
+ #work .learning-work .work-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+ #work .work-item { display: flex; }
  #work .work-card { min-height: 0; flex: 1; }
  #work .work-image { height: clamp(125px,16vh,180px); flex-shrink: 0; }
  #work .work-copy { padding: 1rem; }
@@ -76,7 +78,12 @@
  #work .work-cta { font-size: .875rem; }
  #work .work-related { font-size: .75rem; padding: .6rem .2rem; }
 }
-/* Preserve the four-card overview and visible Explore links on laptop screens. */
+@media (min-width: 1500px) {
+    #work .work-groups { grid-template-columns: minmax(0,3fr) minmax(0,2fr); align-items: stretch; }
+    #work .work-group { display: flex; flex-direction: column; }
+    #work .work-grid { flex: 1; }
+}
+/* Keep the project overview compact on laptop screens. */
 @media (min-width: 1100px) and (max-height: 800px) {
     #work { padding: 1rem 0; scroll-margin-top: 4.5rem; }
     #work .section-title { font-size: 1.75rem; margin-bottom: .25rem; }

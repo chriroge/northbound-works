@@ -1,0 +1,65 @@
+/* Two Junctions project page; shared navigation and typography stay in style.css. */
+.junctions-page { background: #edf4f2; }
+.junctions-main { max-width: 1160px; margin: 0 auto; padding: calc(var(--nav-height, 5rem) + 2rem) 2rem 2.5rem; }
+.junctions-page [id] { scroll-margin-top: calc(var(--nav-height, 5rem) + 1rem); }
+.junctions-heading { margin-bottom: 1.5rem; }
+.junctions-kicker { color: #23658F; font-size: .875rem; font-weight: 600; margin-bottom: .5rem; }
+.junctions-heading h1 { max-width: 30ch; font-size: clamp(1.9rem, 3.2vw, 2.65rem); line-height: 1.2; text-wrap: balance; }
+.junctions-opening { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
+.junctions-introduction { padding: 0; }
+.junctions-introduction h2 { font-size: 1.1rem; margin-bottom: .65rem; }
+.junctions-introduction p { font-size: 1rem; line-height: 1.65; }
+.junctions-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .85rem 1.25rem; margin-top: 1.3rem; }
+.junctions-actions .btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: .8rem 1.1rem; font-size: 1rem; line-height: 1.4; text-align: center; background: #FF591F; border-color: #FF591F; color: #103554; }
+.junctions-actions .btn-primary:hover { background: #103554; border-color: #103554; color: #fff; }
+.junctions-download, .junctions-evidence-copy > a, .junctions-back a { font-size: 1rem; font-weight: 600; color: #103554; text-decoration: underline; text-underline-offset: 4px; }
+.junctions-preview { margin: 0; }
+.junctions-preview > a { display: block; background: #fff; border: 1px solid #bfd3da; border-radius: 14px; overflow: hidden; }
+.junctions-preview img { display: block; width: 100%; height: auto; }
+.junctions-preview figcaption { font-size: .875rem; line-height: 1.5; padding: .75rem .25rem 0; }
+.junctions-evidence { margin-top: 2.5rem; padding: 1.5rem 0 0; border-top: 1px solid #bfd3da; }
+.junctions-section-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1rem; margin-bottom: 1.2rem; }
+.junctions-section-heading h2, .junctions-reflection h2 { font-size: 1.6rem; }
+.junctions-section-heading p { font-size: .875rem; }
+.junctions-evidence-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.junctions-evidence-card { display: flex; flex-direction: column; min-width: 0; background: #fff; border: 1px solid #bfd3da; border-top: 4px solid #2D79AD; border-radius: 12px; overflow: hidden; }
+.junctions-evidence-image { display: block; height: 210px; overflow: hidden; border-bottom: 1px solid #dce7e9; background: #fff; }
+.junctions-evidence-image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.junctions-evidence-copy { display: flex; flex: 1; flex-direction: column; padding: 1.2rem; }
+.junctions-status { color: #23658F; font-size: .875rem; line-height: 1.35; font-weight: 600; margin-bottom: .6rem; }
+.junctions-evidence-copy h3 { font-size: 1.2rem; line-height: 1.3; margin-bottom: .75rem; }
+.junctions-evidence-copy > p:not(.junctions-status) { font-size: 1rem; line-height: 1.6; margin-bottom: 1rem; }
+.junctions-evidence-copy > a { margin-top: auto; line-height: 1.5; }
+.junctions-reflection { margin-top: 2rem; padding: 1.5rem 1.75rem; border-left: 4px solid #FF591F; border-radius: 0 12px 12px 0; background: #fff; }
+.junctions-reflection h2 { margin-bottom: .75rem; }
+.junctions-reflection p { max-width: 90ch; font-size: 1rem; line-height: 1.7; }
+.junctions-back { margin-top: 1.75rem; }
+@media (max-width: 900px) {
+    .junctions-opening { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 1.5rem; }
+    .junctions-evidence-grid { gap: 1rem; }
+    .junctions-evidence-copy { padding: 1rem; }
+    .junctions-evidence-image { height: 180px; }
+}
+@media (max-width: 800px) {
+    .junctions-main { padding-top: 1.5rem; }
+    .junctions-opening { grid-template-columns: 1fr; }
+    .junctions-preview { max-width: 540px; }
+    .junctions-evidence-grid { grid-template-columns: 1fr; }
+    .junctions-evidence-card { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
+    .junctions-evidence-image { height: 100%; min-height: 240px; border-bottom: 0; border-right: 1px solid #dce7e9; }
+    .junctions-evidence-image img { max-height: 340px; }
+}
+@media (max-width: 540px) {
+    .junctions-main { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .junctions-actions { align-items: flex-start; flex-direction: column; }
+    .junctions-actions .btn-primary { width: 100%; }
+    .junctions-evidence-card { display: flex; }
+    .junctions-evidence-image { min-height: 0; height: 220px; border-right: 0; border-bottom: 1px solid #dce7e9; }
+    .junctions-evidence-image img { max-height: none; }
+    .junctions-reflection { padding: 1.25rem; }
+}
+@media print {
+    .junctions-main { padding-top: 0; max-width: none; }
+    .junctions-actions, .junctions-back { display: none; }
+    .junctions-evidence-card, .junctions-reflection { break-inside: avoid; }
+}
