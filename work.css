@@ -1,28 +1,31 @@
 /* Shared home for projects and writing, in the Brand Brief V1 palette. */
 #home.hero { min-height: 100svh; scroll-margin-top: 0; }
 .work-section { background: #edf4f2; position: relative; }
+#work { --project-gap: 1rem; --group-padding: .85rem; padding: 2rem 0; scroll-margin-top: calc(var(--nav-height, 4rem) + 1rem); }
+#work .container { max-width: 1240px; }
+#work .section-title { font-size: 2rem; margin-bottom: .4rem; }
+#work .section-description { font-size: 1rem; max-width: 900px; margin-bottom: 1.25rem; }
 .legacy-anchor { position: absolute; top: 0; scroll-margin-top: 8rem; }
-.work-groups { display: grid; gap: 1.5rem; }
-.work-group { min-width: 0; padding: 1.25rem; border: 1px solid #a8dadc66; border-radius: 18px; }
+.work-groups { display: grid; gap: 1.25rem; }
+.work-group { min-width: 0; padding: var(--group-padding, .85rem); border: 1px solid #a8dadc66; border-radius: 18px; }
 .learning-work { background: #a8dadc33; }
 .college-readiness { background: #F8F7F3; }
-.work-group-heading { font-size: 1.25rem; color: #B85C24; margin-bottom: 1rem; }
-.work-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 2rem; align-items: start; }
-.work-item { min-width: 0; }
-.work-card { display: flex; flex-direction: column; color: #1D3557; background: #F8F7F3; border: 1px solid #A8DADC; border-top: 4px solid #457B9D; border-radius: 14px; overflow: hidden; min-height: 530px; transition: box-shadow .2s; }
+.work-group-heading { font-size: 1.2rem; color: #B85C24; margin-bottom: .75rem; }
+.work-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--project-gap, 1rem); align-items: stretch; }
+.work-item { min-width: 0; display: flex; }
+.work-card { display: flex; flex: 1; flex-direction: column; color: #1D3557; background: #F8F7F3; border: 1px solid #A8DADC; border-top: 4px solid #457B9D; border-radius: 14px; overflow: hidden; min-height: 0; transition: box-shadow .2s; }
 .work-card:hover { box-shadow: 0 8px 24px #1d35571a; }
 .work-card:focus-visible { outline: 3px solid #1D3557; outline-offset: 5px; }
-.work-image { height: 240px; overflow: hidden; background: #F8F7F3; }
+.work-image { aspect-ratio: 16 / 7; flex-shrink: 0; overflow: hidden; background: #F8F7F3; }
 .work-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .school-preview img { object-position: 80% 20%; transform: scale(1.4); transform-origin: 80% 20%; }
 .jarvis-preview img { object-position: top center; }
-.junction-preview { background: #fff; }
-.junction-preview img { object-fit: contain; padding: .5rem; }
-.work-copy { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+.junction-preview img { object-position: center 50%; }
+.work-copy { padding: .95rem; display: flex; flex-direction: column; flex: 1; }
 .work-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; margin-bottom: .8rem; color: #1D3557; }
-.work-copy h3 { font-size: 1.8rem; color: #1D3557; line-height: 1.2; margin: 0 0 1rem; }
-.work-copy p:not(.work-label) { font-size: 1rem; line-height: 1.55; margin-bottom: 1rem; }
-.work-cta { text-decoration: underline; text-underline-offset: 4px; font-weight: 600; margin-top: auto; padding-top: .5rem; }
+.work-copy h3 { font-size: 1.2rem; color: #1D3557; line-height: 1.25; min-height: 2.5em; margin: 0 0 .65rem; }
+.work-copy p:not(.work-label) { font-size: 1rem; line-height: 1.5; margin-bottom: .75rem; }
+.work-cta { font-size: 1rem; text-decoration: underline; text-underline-offset: 4px; font-weight: 600; margin-top: auto; padding-top: .25rem; }
 .work-related { padding: 1rem .5rem; font-size: .9rem; color: #1D3557; }
 .work-related>a { text-decoration: underline; text-underline-offset: 4px; }
 .work-related details { margin-top: 1rem; }
@@ -54,46 +57,12 @@
 .jarvis-related { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: .9rem; margin-top: 1.5rem; }
 .work-skip { position: absolute; top: -100px; background: #F8F7F3; z-index: 1100; padding: 1rem; }
 .work-skip:focus { top: 0; }
-@media(max-width:800px) { .jarvis-sheet { margin: 1rem; } .work-grid { gap: 1rem; } .work-image { height: 190px; } }
-@media(max-width:650px) { .work-grid { grid-template-columns: 1fr; } .work-card { min-height: 0; } .work-image { height: 220px; } .jarvis-content { padding: 1.25rem; } .jarvis-steps { grid-template-columns: 1fr; } .jarvis-figure img { max-height: none; width: 100%; } }
+@media(max-width:800px) { .jarvis-sheet { margin: 1rem; } }
+@media(max-width:650px) { #work .container { padding: 0 1rem; } .work-grid { grid-template-columns: 1fr; } .work-copy h3 { min-height: 0; } .work-image { aspect-ratio: 16 / 8; } .jarvis-content { padding: 1.25rem; } .jarvis-steps { grid-template-columns: 1fr; } .jarvis-figure img { max-height: none; width: 100%; } }
 @media(prefers-reduced-motion:reduce) { .work-card { transition: none; } }
 
-/* Three Learning & Work projects and two College Readiness projects. */
-@media(min-width:1100px) {
- #work { padding: 1.5rem 0 2rem; scroll-margin-top: 5rem; }
- #work .container { max-width: 1440px; }
- #work .section-title { font-size: 2rem; margin-bottom: .4rem; }
- #work .section-description { font-size: 1rem; max-width: 900px; margin-bottom: 1.25rem; }
- #work .work-groups { grid-template-columns: 1fr; }
- #work .work-group-heading { margin: 0 0 1rem; }
- #work .work-grid { gap: 1.25rem; align-items: stretch; }
- #work .learning-work .work-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
- #work .work-item { display: flex; }
- #work .work-card { min-height: 0; flex: 1; }
- #work .work-image { height: clamp(125px,16vh,180px); flex-shrink: 0; }
- #work .work-copy { padding: 1rem; }
- #work .work-label { font-size: .65rem; margin-bottom: .6rem; }
- #work .work-copy h3 { font-size: 1.4rem; margin-bottom: .7rem; }
- #work .work-copy p:not(.work-label) { font-size: .875rem; line-height: 1.5; margin-bottom: .7rem; }
- #work .work-cta { font-size: .875rem; }
- #work .work-related { font-size: .75rem; padding: .6rem .2rem; }
-}
-@media (min-width: 1500px) {
-    #work .work-groups { grid-template-columns: minmax(0,3fr) minmax(0,2fr); align-items: stretch; }
-    #work .work-group { display: flex; flex-direction: column; }
-    #work .work-grid { flex: 1; }
-}
-/* Keep the project overview compact on laptop screens. */
-@media (min-width: 1100px) and (max-height: 800px) {
-    #work { padding: 1rem 0; scroll-margin-top: 4.5rem; }
-    #work .section-title { font-size: 1.75rem; margin-bottom: .25rem; }
-    #work .section-description { font-size: .9375rem; margin-bottom: .75rem; }
-    #work .work-group { padding: .75rem; gap: .75rem; }
-    #work .work-group-heading { font-size: 1.2rem; }
-    #work .work-grid { gap: .9rem; }
-    #work .work-image { height: clamp(85px, 15vh, 115px); }
-    #work .work-copy { padding: .85rem; }
-    #work .work-copy h3 { font-size: 1.2rem; margin-bottom: .6rem; }
-    #work .work-copy p:not(.work-label) { font-size: .875rem; line-height: 1.45; margin-bottom: .6rem; }
-    #work .work-label { margin-bottom: .5rem; }
+/* Both categories use the same card width; the two-card row stays left aligned. */
+@media (min-width: 1000px) {
+    #work .learning-work .work-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+    #work .college-readiness { width: calc((200% + 2 * var(--group-padding) + 2px - var(--project-gap)) / 3); }
 }
